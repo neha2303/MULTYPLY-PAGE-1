@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+      <title>Multiply Prototype</title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="assets/css/style.css"/>
+      <link rel="stylesheet" href="assets/css/responsive.css">
+      <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.css"/>
+	  	   <link rel="stylesheet" href="assets/css/datepicker.css"/>
+
+      <!-- Animate Css file -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+   </head>
+   <body id="top">
+      <div class="page-container">
+                 <nav class="vertical-nav">
+            <div class="sidebar">
+               <div class="sidenav-logo  d-flex  align-items-center">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.99627 17.2594C2.82619 14.0894 2.8262 8.94968 5.99627 5.77961L58.2598 58.0431C55.0897 61.2132 49.95 61.2132 46.78 58.0431L5.99627 17.2594Z" fill="url(#paint0_linear)"/>
+<path d="M58.2601 46.5638C61.4302 49.7339 61.4301 54.8736 58.2601 58.0436L5.99654 5.7801C9.16661 2.61003 14.3063 2.61002 17.4764 5.7801L58.2601 46.5638Z" fill="url(#paint1_linear)"/>
+<path d="M46.5247 5.73992C49.6948 2.56985 54.8345 2.56985 58.0046 5.73993L5.74104 58.0035C2.57097 54.8334 2.57096 49.6937 5.74103 46.5236L46.5247 5.73992Z" fill="url(#paint2_linear)"/>
+<path d="M17.2204 58.0042C14.0503 61.1743 8.91062 61.1743 5.74054 58.0042L58.0041 5.74068C61.1742 8.91075 61.1742 14.0505 58.0041 17.2205L17.2204 58.0042Z" fill="url(#paint3_linear)"/>
+<defs>
+<linearGradient id="paint0_linear" x1="3.12631" y1="8.64957" x2="66.9617" y2="75.4537" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF7438"/>
+<stop offset="1" stop-color="#FF7438" stop-opacity="0.19"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="61.13" y1="55.1737" x2="-2.70531" y2="-11.6304" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF7438"/>
+<stop offset="1" stop-color="#FF7438" stop-opacity="0.19"/>
+</linearGradient>
+<linearGradient id="paint2_linear" x1="55.1346" y1="2.86996" x2="-11.6695" y2="66.7053" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00C1FF"/>
+<stop offset="1" stop-color="#04C0FF" stop-opacity="0.15"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x1="8.61051" y1="60.8742" x2="75.4146" y2="-2.96117" gradientUnits="userSpaceOnUse">
+<stop stop-color="#08C3FF"/>
+<stop offset="1" stop-color="#06C3FF" stop-opacity="0.15"/>
+</linearGradient>
+</defs>
+</svg>
+
+               </div>
+               <ul class="nav-list accordion" id="accordion">
+                   <li class="nav-item ">
+					<a href="#" class="nav-link d-flex align-items-center">
+						<div class="nav-list-img">
+                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.81641C0 1.26412 0.447715 0.816406 1 0.816406H8C8.55228 0.816406 9 1.26412 9 1.81641V8.81641C9 9.36869 8.55228 9.81641 8 9.81641H1C0.447715 9.81641 0 9.36869 0 8.81641V1.81641ZM2 2.81641V7.81641H7V2.81641H2Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 1.81641C11 1.26412 11.4477 0.816406 12 0.816406H19C19.5523 0.816406 20 1.26412 20 1.81641V8.81641C20 9.36869 19.5523 9.81641 19 9.81641H12C11.4477 9.81641 11 9.36869 11 8.81641V1.81641ZM13 2.81641V7.81641H18V2.81641H13Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 12.8164C11 12.2641 11.4477 11.8164 12 11.8164H19C19.5523 11.8164 20 12.2641 20 12.8164V19.8164C20 20.3687 19.5523 20.8164 19 20.8164H12C11.4477 20.8164 11 20.3687 11 19.8164V12.8164ZM13 13.8164V18.8164H18V13.8164H13Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.8164C0 12.2641 0.447715 11.8164 1 11.8164H8C8.55228 11.8164 9 12.2641 9 12.8164V19.8164C9 20.3687 8.55228 20.8164 8 20.8164H1C0.447715 20.8164 0 20.3687 0 19.8164V12.8164ZM2 13.8164V18.8164H7V13.8164H2Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                        Dashboard
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+					</a>
+					<ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">Operations</a></li>
+					  <li  class="sub-nav-link"><a href="#">Medical</a></li>
+					  <li  class="sub-nav-link"><a href="#">Finance</a></li>
+					  <li  class="sub-nav-link"><a href="#">MIS Reports </a></li>
+					   
+					</ul>
+				  </li>
+                 
+                  <li class="nav-item ">
+                     <a href="#" class="nav-link d-flex align-items-center">
+                        <div class="nav-list-img">
+                   <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.46447 14.2809C2.40215 13.3432 3.67392 12.8164 5 12.8164H13C14.3261 12.8164 15.5979 13.3432 16.5355 14.2809C17.4732 15.2186 18 16.4903 18 17.8164V19.8164C18 20.3687 17.5523 20.8164 17 20.8164C16.4477 20.8164 16 20.3687 16 19.8164V17.8164C16 17.0208 15.6839 16.2577 15.1213 15.6951C14.5587 15.1325 13.7956 14.8164 13 14.8164H5C4.20435 14.8164 3.44129 15.1325 2.87868 15.6951C2.31607 16.2577 2 17.0208 2 17.8164V19.8164C2 20.3687 1.55228 20.8164 1 20.8164C0.447715 20.8164 0 20.3687 0 19.8164V17.8164C0 16.4903 0.526784 15.2186 1.46447 14.2809Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9 2.81641C7.34315 2.81641 6 4.15955 6 5.81641C6 7.47326 7.34315 8.81641 9 8.81641C10.6569 8.81641 12 7.47326 12 5.81641C12 4.15955 10.6569 2.81641 9 2.81641ZM4 5.81641C4 3.05498 6.23858 0.816406 9 0.816406C11.7614 0.816406 14 3.05498 14 5.81641C14 8.57783 11.7614 10.8164 9 10.8164C6.23858 10.8164 4 8.57783 4 5.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                       Patient
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Registration</a></li>
+					  <li  class="sub-nav-link"><a href="#">View Patient</a></li>
+					  <li  class="sub-nav-link"><a href="#">Sponsor Details</a></li>
+					  <li  class="sub-nav-link"><a href="#">Link Partner</a></li>
+					   
+					</ul>
+                  </li>
+				  <li class="active nav-item ">
+                     <a href="#" class="nav-link d-flex align-items-center">
+                        <div class="nav-list-img">
+                         <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3 4.81641C2.44772 4.81641 2 5.26412 2 5.81641V19.8164C2 20.3687 2.44772 20.8164 3 20.8164H17C17.5523 20.8164 18 20.3687 18 19.8164V5.81641C18 5.26412 17.5523 4.81641 17 4.81641H3ZM0 5.81641C0 4.15955 1.34315 2.81641 3 2.81641H17C18.6569 2.81641 20 4.15955 20 5.81641V19.8164C20 21.4733 18.6569 22.8164 17 22.8164H3C1.34315 22.8164 0 21.4733 0 19.8164V5.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14 0.816406C14.5523 0.816406 15 1.26412 15 1.81641V5.81641C15 6.36869 14.5523 6.81641 14 6.81641C13.4477 6.81641 13 6.36869 13 5.81641V1.81641C13 1.26412 13.4477 0.816406 14 0.816406Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 0.816406C6.55228 0.816406 7 1.26412 7 1.81641V5.81641C7 6.36869 6.55228 6.81641 6 6.81641C5.44772 6.81641 5 6.36869 5 5.81641V1.81641C5 1.26412 5.44772 0.816406 6 0.816406Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 9.81641C0 9.26412 0.447715 8.81641 1 8.81641H19C19.5523 8.81641 20 9.26412 20 9.81641C20 10.3687 19.5523 10.8164 19 10.8164H1C0.447715 10.8164 0 10.3687 0 9.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                        Appointments
+                     </a>
+                  </li>
+				     <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                       <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 2.81641C6.02944 2.81641 2 6.84584 2 11.8164C2 16.787 6.02944 20.8164 11 20.8164C15.9706 20.8164 20 16.787 20 11.8164C20 6.84584 15.9706 2.81641 11 2.81641ZM0 11.8164C0 5.74127 4.92487 0.816406 11 0.816406C17.0751 0.816406 22 5.74127 22 11.8164C22 17.8915 17.0751 22.8164 11 22.8164C4.92487 22.8164 0 17.8915 0 11.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 4.81641C11.5523 4.81641 12 5.26412 12 5.81641V11.1984L15.4472 12.922C15.9412 13.169 16.1414 13.7696 15.8944 14.2636C15.6474 14.7576 15.0468 14.9578 14.5528 14.7108L10.5528 12.7108C10.214 12.5414 10 12.1952 10 11.8164V5.81641C10 5.26412 10.4477 4.81641 11 4.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                        Check-In List
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">EMR</a></li>
+					  <li  class="sub-nav-link"><a href="#">ART</a></li>
+					   <li  class="sub-nav-link"><a href="#">Invoice</a></li>
+					</ul>
+                  </li>
+				    <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                       <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3 2.81641C2.44772 2.81641 2 3.26412 2 3.81641V7.81641C2 8.36869 2.44772 8.81641 3 8.81641H19C19.5523 8.81641 20 8.36869 20 7.81641V3.81641C20 3.26412 19.5523 2.81641 19 2.81641H3ZM0 3.81641C0 2.15955 1.34315 0.816406 3 0.816406H19C20.6569 0.816406 22 2.15955 22 3.81641V7.81641C22 9.47326 20.6569 10.8164 19 10.8164H3C1.34315 10.8164 0 9.47326 0 7.81641V3.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3 14.8164C2.44772 14.8164 2 15.2641 2 15.8164V19.8164C2 20.3687 2.44772 20.8164 3 20.8164H19C19.5523 20.8164 20 20.3687 20 19.8164V15.8164C20 15.2641 19.5523 14.8164 19 14.8164H3ZM0 15.8164C0 14.1596 1.34315 12.8164 3 12.8164H19C20.6569 12.8164 22 14.1596 22 15.8164V19.8164C22 21.4733 20.6569 22.8164 19 22.8164H3C1.34315 22.8164 0 21.4733 0 19.8164V15.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 5.81641C4 5.26412 4.44772 4.81641 5 4.81641H5.01C5.56228 4.81641 6.01 5.26412 6.01 5.81641C6.01 6.36869 5.56228 6.81641 5.01 6.81641H5C4.44772 6.81641 4 6.36869 4 5.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 17.8164C4 17.2641 4.44772 16.8164 5 16.8164H5.01C5.56228 16.8164 6.01 17.2641 6.01 17.8164C6.01 18.3687 5.56228 18.8164 5.01 18.8164H5C4.44772 18.8164 4 18.3687 4 17.8164Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Billing
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">Invoice List</a></li>
+					  <li  class="sub-nav-link"><a href="#">Service Invoice</a></li>
+					  <li  class="sub-nav-link"><a href="#">Pharmacy Invoice</a></li>
+					   <li  class="sub-nav-link"><a href="#">Corporate Invoice</a></li>
+					    <li  class="sub-nav-link"><a href="#">Refund Service Invoice</a></li>
+						<li  class="sub-nav-link"><a href="#">Pharmacy Returns</a></li>
+						<li  class="sub-nav-link"><a href="#">Patient Advance</a></li>
+						<li  class="sub-nav-link"><a href="#">Refund Patient Advance</a></li>
+						<li  class="sub-nav-link"><a href="#">Package Consumption</a></li>
+						<li  class="sub-nav-link"><a href="#">Payment Mode Change</a></li>
+						<li  class="sub-nav-link"><a href="#">Doctor Payment</a></li>
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                        <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.08619 1.41027C9.24669 1.04914 9.60481 0.816406 10 0.816406C11.0609 0.816406 12.0783 1.23783 12.8284 1.98798C13.5786 2.73812 14 3.75554 14 4.81641V7.81641H18.6549C19.0876 7.8124 19.5162 7.90207 19.911 8.0793C20.3078 8.25737 20.6611 8.51957 20.9465 8.84774C21.2318 9.17591 21.4424 9.5622 21.5637 9.97985C21.6849 10.3975 21.7139 10.8365 21.6487 11.2665L20.2687 20.2663C20.2687 20.2666 20.2687 20.2661 20.2687 20.2663C20.1601 20.9814 19.7966 21.6339 19.2456 22.1024C18.6958 22.5696 17.9961 22.8231 17.2748 22.8164H3C2.20435 22.8164 1.44129 22.5003 0.87868 21.9377C0.31607 21.3751 0 20.6121 0 19.8164V12.8164C0 12.0208 0.31607 11.2577 0.87868 10.6951C1.44129 10.1325 2.20435 9.81641 3 9.81641H5.35013L9.08619 1.41027ZM7 11.0286L10.6078 2.91101C10.9092 3.00716 11.1864 3.17435 11.4142 3.40219C11.7893 3.77727 12 4.28597 12 4.81641V8.81641C12 9.36869 12.4477 9.81641 13 9.81641H18.66L18.6713 9.81634C18.8163 9.8147 18.9599 9.84459 19.0921 9.90395C19.2244 9.96331 19.3421 10.0507 19.4373 10.1601C19.5324 10.2695 19.6026 10.3983 19.643 10.5375C19.6834 10.6766 19.6931 10.8227 19.6714 10.9659C19.6714 10.9658 19.6714 10.9661 19.6714 10.9659L18.2913 19.9665C18.2551 20.2049 18.134 20.4223 17.9503 20.5785C17.7665 20.7347 17.5325 20.8192 17.2913 20.8165L7 20.8164V11.0286ZM5 20.8164V11.8164H3C2.73478 11.8164 2.48043 11.9218 2.29289 12.1093C2.10536 12.2968 2 12.5512 2 12.8164V19.8164C2 20.0816 2.10536 20.336 2.29289 20.5235C2.48043 20.7111 2.73478 20.8164 3 20.8164H5Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Approval
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					 <li class="sub-nav-link"><a href="#">Dashboard</a></li>
+					  <li class="sub-nav-link"><a href="#">Concession Invoice</a></li>
+					  <li  class="sub-nav-link"><a href="#">Refund Invoice</a></li>
+					   <li  class="sub-nav-link"><a href="#">Pharmacy Returns</a></li>
+					    <li  class="sub-nav-link"><a href="#">Advance Refund</a></li>
+						<li  class="sub-nav-link"><a href="#">Store Indent</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Requisition</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Received Note</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Return Note</a></li>
+						<li  class="sub-nav-link"><a href="#">Scrap Sale</a></li>
+						<li  class="sub-nav-link"><a href="#">Stock Adjustment</a></li>
+						<li  class="sub-nav-link"><a href="#">Work Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Expired Item Return</a></li>
+						<li  class="sub-nav-link"><a href="#">MRP Adjustment</a></li>
+						<li  class="sub-nav-link"><a href="#">Direct Issue</a></li>
+					</ul>
+                  </li>
+                   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                       <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.81634L2 4.81641L2 4.81647C2 4.81736 1.99998 4.82162 2.00305 4.8317C2.00645 4.84284 2.01483 4.86486 2.03507 4.89784C2.07752 4.96698 2.16408 5.07093 2.32624 5.19873C2.65642 5.45894 3.19616 5.73701 3.95227 5.98904C5.45402 6.48963 7.59229 6.81641 10 6.81641C12.4077 6.81641 14.546 6.48963 16.0477 5.98904C16.8038 5.73701 17.3436 5.45894 17.6738 5.19873C17.8359 5.07093 17.9225 4.96698 17.9649 4.89784C17.9852 4.86486 17.9935 4.84284 17.9969 4.8317C18 4.82162 18 4.81736 18 4.81647V4.81641C18 4.81568 18.0001 4.81147 17.9969 4.80111C17.9935 4.78997 17.9852 4.76796 17.9649 4.73497C17.9225 4.66583 17.8359 4.56188 17.6738 4.43408C17.3436 4.17387 16.8038 3.8958 16.0477 3.64377C14.546 3.14318 12.4077 2.81641 10 2.81641C7.59229 2.81641 5.45402 3.14318 3.95227 3.64377C3.19616 3.8958 2.65642 4.17387 2.32624 4.43408C2.16408 4.56188 2.07752 4.66583 2.03507 4.73497C2.01483 4.76796 2.00645 4.78997 2.00305 4.80111C1.99998 4.8112 2 4.81545 2 4.81634ZM3.31981 1.7464C5.07541 1.1612 7.43715 0.816406 10 0.816406C12.5629 0.816406 14.9246 1.1612 16.6802 1.7464C17.5528 2.03726 18.331 2.40564 18.9117 2.86326C19.4811 3.312 20 3.96446 20 4.81641C20 5.66835 19.4811 6.32082 18.9117 6.76955C18.331 7.22717 17.5528 7.59555 16.6802 7.88641C14.9246 8.47161 12.5629 8.81641 10 8.81641C7.43715 8.81641 5.07541 8.47161 3.31981 7.88641C2.44724 7.59555 1.66896 7.22717 1.08829 6.76955C0.518893 6.32082 0 5.66835 0 4.81641C0 3.96446 0.518893 3.312 1.08829 2.86326C1.66896 2.40564 2.44724 2.03726 3.31981 1.7464Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.8164C1.55228 10.8164 2 11.2641 2 11.8164C2 11.8183 2.00008 11.8234 2.0034 11.8344C2.00695 11.8462 2.01544 11.8685 2.03558 11.9015C2.07772 11.9707 2.16348 12.0744 2.32419 12.2017C2.65159 12.4611 3.18788 12.7387 3.94167 12.9904C5.43891 13.4902 7.57676 13.8164 10 13.8164C12.4232 13.8164 14.5611 13.4902 16.0583 12.9904C16.8121 12.7387 17.3484 12.4611 17.6758 12.2017C17.8365 12.0744 17.9223 11.9707 17.9644 11.9015C17.9846 11.8685 17.993 11.8462 17.9966 11.8344C17.9999 11.8234 18 11.8183 18 11.8164C18 11.2641 18.4477 10.8164 19 10.8164C19.5523 10.8164 20 11.2641 20 11.8164C20 12.6658 19.4868 13.3185 18.9179 13.7692C18.3391 14.2279 17.5629 14.5966 16.6917 14.8874C14.9389 15.4726 12.5768 15.8164 10 15.8164C7.42324 15.8164 5.06109 15.4726 3.30833 14.8874C2.43712 14.5966 1.66091 14.2279 1.08206 13.7692C0.513195 13.3185 0 12.6658 0 11.8164C0 11.2641 0.447715 10.8164 1 10.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 3.81641C1.55228 3.81641 2 4.26412 2 4.81641V18.8164C2 18.8183 2.00008 18.8234 2.0034 18.8344C2.00695 18.8462 2.01544 18.8685 2.03558 18.9015C2.07772 18.9707 2.16348 19.0744 2.32419 19.2017C2.65159 19.4611 3.18788 19.7387 3.94167 19.9904C5.43891 20.4902 7.57676 20.8164 10 20.8164C12.4232 20.8164 14.5611 20.4902 16.0583 19.9904C16.8121 19.7387 17.3484 19.4611 17.6758 19.2017C17.8365 19.0744 17.9223 18.9707 17.9644 18.9015C17.9846 18.8685 17.993 18.8462 17.9966 18.8344C17.9999 18.8234 18 18.8183 18 18.8164V4.81641C18 4.26412 18.4477 3.81641 19 3.81641C19.5523 3.81641 20 4.26412 20 4.81641V18.8164C20 19.6658 19.4868 20.3185 18.9179 20.7692C18.3391 21.2279 17.5629 21.5966 16.6917 21.8874C14.9389 22.4726 12.5768 22.8164 10 22.8164C7.42324 22.8164 5.06109 22.4726 3.30833 21.8874C2.43712 21.5966 1.66091 21.2279 1.08206 20.7692C0.513195 20.3185 0 19.6658 0 18.8164V4.81641C0 4.26412 0.447715 3.81641 1 3.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                       Inventory
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">Dashboard</a></li>
+					  <li  class="sub-nav-link"><a href="#">Current Item Stock</a></li>
+					   <li  class="sub-nav-link"><a href="#">Opening Balance</a></li>
+					    <li  class="sub-nav-link"><a href="#">Store Indent</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Requisition</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Received Note</a></li>
+						<li  class="sub-nav-link"><a href="#">Issue To Clinic</a></li>
+						<li  class="sub-nav-link"><a href="#">Receive against Issue	</a></li>
+						<li  class="sub-nav-link"><a href="#">Return against Receive</a></li>
+						<li  class="sub-nav-link"><a href="#">Material Consumption</a></li>
+						<li  class="sub-nav-link"><a href="#">Suspend Stock Transaction</a></li>
+						<li  class="sub-nav-link"><a href="#">Physical Item Stock</a></li>
+						<li  class="sub-nav-link"><a href="#">Stock Adjustment</a></li>
+						<li  class="sub-nav-link"><a href="#">Item Enquiry</a></li>
+						<li  class="sub-nav-link"><a href="#">Quotation</a></li>
+						<li  class="sub-nav-link"><a href="#">Work Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Issue to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Receive to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Scrap Sale</a></li>
+						<li  class="sub-nav-link"><a href="#">Expired Item Return</a></li>
+						<li  class="sub-nav-link"><a href="#">Issue GRN Item to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Receive GRN Item to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Return Note</a></li>
+						<li  class="sub-nav-link"><a href="#">MRP Adjustment</a></li>
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                      <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.00042 0.506836C9.26579 0.506719 9.52032 0.612084 9.70797 0.799729L15.3677 6.4595C15.3678 6.45958 15.3677 6.45942 15.3677 6.4595C16.6269 7.7179 17.4848 9.32168 17.8325 11.0676C18.1802 12.8136 18.0024 14.6235 17.3213 16.2683C16.6403 17.9132 15.4868 19.3192 14.0066 20.3084C12.5264 21.2976 10.7861 21.8255 9.00586 21.8255C7.22558 21.8255 5.48529 21.2976 4.00512 20.3084C2.52495 19.3192 1.3714 17.9132 0.690383 16.2683C0.00936806 14.6235 -0.168517 12.8135 0.179228 11.0676C0.526918 9.32185 1.38445 7.71844 2.64339 6.4601C2.64359 6.4599 2.64319 6.4603 2.64339 6.4601L8.29313 0.800355C8.48061 0.612544 8.73505 0.506953 9.00042 0.506836ZM9.00149 2.92167L4.05774 7.87417C3.07831 8.85296 2.41117 10.1002 2.1407 11.4582C1.87023 12.8162 2.00859 14.2239 2.53827 15.5033C3.06795 16.7826 3.96515 17.8761 5.11639 18.6455C6.26764 19.4149 7.6212 19.8255 9.00586 19.8255C10.3905 19.8255 11.7441 19.4149 12.8953 18.6455C14.0466 17.8761 14.9438 16.7826 15.4735 15.5033C16.0031 14.2239 16.1415 12.8162 15.871 11.4582C15.6006 10.1002 14.9334 8.85296 13.954 7.87417L9.00149 2.92167Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Pathology
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Work Order</a></li>
+					  <li  class="sub-nav-link"><a href="#">Work Order List</a></li>
+					   <li  class="sub-nav-link"><a href="#">Sample Collection</a></li>
+					    <li  class="sub-nav-link"><a href="#">Sample Dispatch</a></li>
+						<li  class="sub-nav-link"><a href="#">Sample Status</a></li>
+						<li  class="sub-nav-link"><a href="#">Result Entry</a></li>
+						<li  class="sub-nav-link"><a href="#">Doctor Authorization</a></li>
+						<li  class="sub-nav-link"><a href="#">Upload Report</a></li>
+						<li  class="sub-nav-link"><a href="#">Report Delivery	</a></li>
+						<li  class="sub-nav-link"><a href="#">Outsourcing</a></li>
+						
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                     <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 2.81641C6.02944 2.81641 2 6.84584 2 11.8164C2 16.787 6.02944 20.8164 11 20.8164C15.9706 20.8164 20 16.787 20 11.8164C20 6.84584 15.9706 2.81641 11 2.81641ZM0 11.8164C0 5.74127 4.92487 0.816406 11 0.816406C17.0751 0.816406 22 5.74127 22 11.8164C22 17.8915 17.0751 22.8164 11 22.8164C4.92487 22.8164 0 17.8915 0 11.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 8.81641C9.34315 8.81641 8 10.1596 8 11.8164C8 13.4733 9.34315 14.8164 11 14.8164C12.6569 14.8164 14 13.4733 14 11.8164C14 10.1596 12.6569 8.81641 11 8.81641ZM6 11.8164C6 9.05498 8.23858 6.81641 11 6.81641C13.7614 6.81641 16 9.05498 16 11.8164C16 14.5778 13.7614 16.8164 11 16.8164C8.23858 16.8164 6 14.5778 6 11.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 7.81641C10 7.26412 10.4477 6.81641 11 6.81641H20.17C20.7223 6.81641 21.17 7.26412 21.17 7.81641C21.17 8.36869 20.7223 8.81641 20.17 8.81641H11C10.4477 8.81641 10 8.36869 10 7.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.44891 5.01039C2.92705 4.73399 3.53873 4.89753 3.81513 5.37567L8.40513 13.3157C8.68154 13.7938 8.518 14.4055 8.03986 14.6819C7.56172 14.9583 6.95004 14.7948 6.67364 14.3166L2.08364 6.37662C1.80723 5.89848 1.97077 5.2868 2.44891 5.01039Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.9587 12.9504C15.4371 13.2263 15.6012 13.8378 15.3253 14.3162L10.7453 22.2562C10.4693 22.7346 9.85782 22.8988 9.37941 22.6228C8.90101 22.3468 8.7369 21.7353 9.01285 21.2569L13.5929 13.3169C13.8688 12.8385 14.4803 12.6744 14.9587 12.9504Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Radiology
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Work Order</a></li>
+					  <li  class="sub-nav-link"><a href="#">Work Order List</a></li>
+					   <li  class="sub-nav-link"><a href="#">Result Entry</a></li>
+					    <li  class="sub-nav-link"><a href="#">Upload Report</a></li>
+						<li  class="sub-nav-link"><a href="#">Report Delivery</a></li>
+					
+					</ul>
+                  </li>
+				    <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                    <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 22 21" style="enable-background:new 0 0 22 21;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#838383;}
+</style>
+<path class="st0" d="M14,20.8c-0.4,0-0.8-0.3-0.9-0.7L8,5l-2.1,6.2c-0.1,0.4-0.5,0.7-0.9,0.7H1c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1
+	h3.3l2.8-8.3C7.2,1.1,7.6,0.8,8,0.8s0.8,0.3,0.9,0.7L14,16.7l2.1-6.2c0.1-0.4,0.5-0.7,0.9-0.7h4c0.6,0,1,0.4,1,1c0,0.6-0.4,1-1,1
+	h-3.3l-2.8,8.3C14.8,20.5,14.4,20.8,14,20.8z"/>
+</svg>
+
+                        </div>
+                       OT
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">OT Schedule</a></li>
+					  <li  class="sub-nav-link"><a href="#">OT Details</a></li>
+					  
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                   <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.46447 14.2809C2.40215 13.3432 3.67392 12.8164 5 12.8164H13C14.3261 12.8164 15.5979 13.3432 16.5355 14.2809C17.4732 15.2186 18 16.4903 18 17.8164V19.8164C18 20.3687 17.5523 20.8164 17 20.8164C16.4477 20.8164 16 20.3687 16 19.8164V17.8164C16 17.0208 15.6839 16.2577 15.1213 15.6951C14.5587 15.1325 13.7956 14.8164 13 14.8164H5C4.20435 14.8164 3.44129 15.1325 2.87868 15.6951C2.31607 16.2577 2 17.0208 2 17.8164V19.8164C2 20.3687 1.55228 20.8164 1 20.8164C0.447715 20.8164 0 20.3687 0 19.8164V17.8164C0 16.4903 0.526784 15.2186 1.46447 14.2809Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9 2.81641C7.34315 2.81641 6 4.15955 6 5.81641C6 7.47326 7.34315 8.81641 9 8.81641C10.6569 8.81641 12 7.47326 12 5.81641C12 4.15955 10.6569 2.81641 9 2.81641ZM4 5.81641C4 3.05498 6.23858 0.816406 9 0.816406C11.7614 0.816406 14 3.05498 14 5.81641C14 8.57783 11.7614 10.8164 9 10.8164C6.23858 10.8164 4 8.57783 4 5.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.032 13.6965C19.1701 13.1618 19.7155 12.8402 20.2502 12.9783C21.3229 13.2552 22.2732 13.8806 22.9519 14.7562C23.6307 15.6318 23.9994 16.7079 24.0002 17.8158L24.0002 19.8165C24.0002 20.3688 23.5525 20.8165 23.0002 20.8165C22.448 20.8165 22.0002 20.3688 22.0002 19.8165L22.0002 17.8173C22.0002 17.8172 22.0002 17.8174 22.0002 17.8173C21.9997 17.1527 21.7784 16.5068 21.3713 15.9815C20.964 15.4562 20.3938 15.081 19.7502 14.9148C19.2155 14.7767 18.8939 14.2313 19.032 13.6965Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0315 1.69849C15.1685 1.16346 15.7133 0.840792 16.2483 0.97778C17.3238 1.25316 18.2771 1.87866 18.9578 2.75567C19.6386 3.63268 20.0081 4.71132 20.0081 5.82153C20.0081 6.93174 19.6386 8.01038 18.9578 8.88739C18.2771 9.7644 17.3238 10.3899 16.2483 10.6653C15.7133 10.8023 15.1685 10.4796 15.0315 9.94457C14.8945 9.40954 15.2172 8.86477 15.7522 8.72778C16.3975 8.56255 16.9695 8.18725 17.3779 7.66105C17.7864 7.13484 18.0081 6.48766 18.0081 5.82153C18.0081 5.1554 17.7864 4.50822 17.3779 3.98201C16.9695 3.45581 16.3975 3.08051 15.7522 2.91528C15.2172 2.77829 14.8945 2.23352 15.0315 1.69849Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                       IPD
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Admission</a></li>
+					  <li  class="sub-nav-link"><a href="#">Admission List</a></li>
+					  <li  class="sub-nav-link"><a href="#">Bed Change</a></li>
+					  <li  class="sub-nav-link"><a href="#">Graphical View</a></li>
+					  <li  class="sub-nav-link"><a href="#">Discharge Summary</a></li>
+					  <li  class="sub-nav-link"><a href="#">Discharge</a></li>
+					  <li  class="sub-nav-link"><a href="#">IPD Invoice List</a></li>
+					  <li  class="sub-nav-link"><a href="#">IPD Refund Services</a></li>
+					  
+					</ul>
+                  </li>
+				  <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.50214 1.21709C8.95768 0.954591 9.47421 0.816406 10 0.816406C10.5258 0.816406 11.0424 0.954602 11.4979 1.21713C11.4986 1.21753 11.4993 1.21793 11.5 1.21833L18.5 5.21832C18.9556 5.48137 19.334 5.8596 19.5973 6.31507C19.8606 6.77055 19.9995 7.28724 20 7.81333V15.8154C19.9995 16.3415 19.8606 16.8582 19.5973 17.3136C19.334 17.7691 18.9556 18.1473 18.5 18.4104L18.4961 18.4126L11.5 22.4104C11.4994 22.4107 11.4988 22.4111 11.4982 22.4114C11.0426 22.674 10.5259 22.8123 10 22.8123C9.4741 22.8123 8.95745 22.6741 8.50185 22.4114C8.50123 22.4111 8.50062 22.4107 8.5 22.4104L1.50386 18.4126L1.5 18.4104C1.04439 18.1473 0.66597 17.7691 0.402692 17.3136C0.139414 16.8582 0.000539601 16.3415 0 15.8154V7.81333C0.000539601 7.28724 0.139414 6.77054 0.402692 6.31507C0.66597 5.8596 1.04439 5.48137 1.5 5.21833L1.50386 5.2161L8.50214 1.21709ZM10 2.81641C9.82446 2.81641 9.65202 2.86261 9.5 2.95038L9.49614 2.95261L2.5 6.95038C2.49947 6.95068 2.49895 6.95099 2.49842 6.95129C2.34726 7.03894 2.22169 7.16466 2.13423 7.31596C2.04654 7.46766 2.00025 7.63974 2 7.81495V15.8138C2.00025 15.989 2.04654 16.161 2.13423 16.3127C2.22169 16.464 2.34726 16.5898 2.49842 16.6774C2.49895 16.6777 2.49947 16.678 2.5 16.6783L9.5 20.6783C9.65202 20.7661 9.82446 20.8123 10 20.8123C10.1755 20.8123 10.348 20.7661 10.5 20.6783L10.5039 20.6761L17.5 16.6783C17.5005 16.678 17.5011 16.6777 17.5016 16.6774C17.6527 16.5898 17.7783 16.464 17.8658 16.3127C17.9535 16.1609 17.9998 15.9887 18 15.8133V7.81538C17.9998 7.64002 17.9535 7.46779 17.8658 7.31596C17.7783 7.16467 17.6527 7.03894 17.5016 6.9513C17.5011 6.95099 17.5005 6.95069 17.5 6.95038L10.5 2.95039C10.348 2.86262 10.1755 2.81641 10 2.81641Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Configurations
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">User</a></li>
+					  <li  class="sub-nav-link"><a href="#">Clinic</a></li>
+					  <li  class="sub-nav-link"><a href="#">Application</a></li>
+					  <li  class="sub-nav-link"><a href="#">Patient</a></li>
+					  <li  class="sub-nav-link"><a href="#">Billing</a></li>
+					  <li  class="sub-nav-link"><a href="#">Package</a></li>
+					  <li  class="sub-nav-link"><a href="#">Inventory</a></li>
+					  <li  class="sub-nav-link"><a href="#">Pathology</a></li>
+					   <li  class="sub-nav-link"><a href="#">Radiology</a></li>
+					    <li  class="sub-nav-link"><a href="#">OT</a></li>
+						 <li  class="sub-nav-link"><a href="#">IPD</a></li>
+					</ul>
+                  </li>
+               </ul>
+			
+			  
+            </div>
+         </nav>
+         <div class="main-page-container">
+            <div class="nav-header-main">
+               <div class="nav-header d-flex justify-content-between ">
+                  <div class="header-text">
+                     <h1>Good morning, <span>Jennifer!</span></h1>
+                     <div class="h-date">Wednesday, 06 SEPT 2021 </div>
+                  </div>
+                  <ul class="nav d-flex align-items-center">
+                     <li class="nav-search">
+                        <div class="form-group has-search">
+                           <span class="form-control-feedback">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                 <path d="M19.0004 19.0004L14.6504 14.6504" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                           </span>
+                           <input type="text" class="form-control" placeholder="Search Patients/MR No./Mobile Number/Mobile Number">
+                        </div>
+                     </li>
+                     <li class="header-nav-list drop-down global-header-menu__list-item--with-dropdown">
+                        <a href="#" class="nav-list-item">
+                           <svg width="27" height="35" viewBox="0 0 27 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M21.8333 14.4015C21.8333 12.1733 20.9554 10.0363 19.3926 8.46074C17.8298 6.88515 15.7101 6 13.5 6C11.2899 6 9.17025 6.88515 7.60744 8.46074C6.04464 10.0363 5.16667 12.1733 5.16667 14.4015C5.16667 24.2032 1 27.0037 1 27.0037H26C26 27.0037 21.8333 24.2032 21.8333 14.4015Z" stroke="#939393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M15.9022 32.6045C15.6581 33.0289 15.3076 33.3811 14.8859 33.626C14.4642 33.8709 13.9861 33.9998 13.4995 33.9998C13.0128 33.9998 12.5347 33.8709 12.113 33.626C11.6913 33.3811 11.3409 33.0289 11.0967 32.6045" stroke="#939393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                           </svg>
+                           <span class="badge-pulse"></span>
+                        </a>
+                        <div class="global-header-menu__dropdown-container">
+                           <div class="global-header-dropdown">
+                              <ul class="global-header-dropdown__list">
+                                 <li><a href="#">Messages <span class="label">4</span></a></li>
+                                 <li><a href="#">Badges <span class="label">2</span></a></li>
+                                 <li><a href="#">Tasks<span class="label">1</span></a></li>
+                                 <li><a href="#">Calendar<span class="label">2</span></a></li>
+                              </ul>
+                              <div class="global-header-dropdown-footer">
+                                 <span>9 new notifications</span>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="header-nav-list user d-flex align-items-center">
+                        <div class="dropdown">
+                           <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/user.png" class="user-pic"><span class="user-name"> Jennifer</span></a>
+                           <ul class="dropdown-menu">
+                              <li><a href="#">My Account</a></li>
+                              <li><a href="#">Contact Support</a></li>
+                              <li><a href="#">Logout</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="header-bottom d-flex align-items-end justify-content-between border-bottom-0 pb-0">
+                  <div class="header-b-left">
+                    <a class="back-btn" href="home.html">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 12H5" stroke="#838383" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 19L5 12L12 5" stroke="#838383" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+					 </a>
+					 <div class="header-main-heading ">
+						<div class="page-header d-flex align-items-center">
+							<h3 class="invoice-heading">Payment Details</h3>
+						</div>
+						<div class="add-service-container">
+							
+							<div class="serv-content d-flex align-items-center">
+								<div class="pay-box">
+									<span>Total Amt.</span>
+									<h4>40800.00</h4>
+								</div>
+								<div class="pay-box">
+									<span>Discount</span>
+									<h4>0.00</h4>
+								</div>
+								<div class="pay-box">
+									<span>Payable Amt.</span>
+									<h4>40800.00</h4>
+								</div>
+							</div>
+						</div>
+					 </div>
+                  </div>
+                  <div class="header-b-right">
+                    <ul class="dr-list invoice-person-list d-flex align-items-center">
+									
+
+
+										<li class="mb-0 mr-3 px-4 py-3 border-dark-gray ">
+											<div class="p-des w-100 d-flex align-items-center ">
+												<div class="dr-img mr-3">
+												<img src="images/p1.png" alt="image" class="img-fluid">
+												</div>
+												<div class="dr-des">
+													<h4 class="mb-1">Jenny Wilson</h4>
+													<p>NDAM/65966/P/2019</p>
+													<p>32, Female</p>
+													<p class="ph">(671) 555-0110</p>
+												</div>
+											</div>
+											
+										</li>
+										<li  class="mb-0 px-4 py-3 border-light-gray">
+										<div class="p-des w-100 d-flex align-items-center">
+												<div class="dr-img mr-3">
+												<img src="images/p2.png" alt="image" class="img-fluid">
+												</div>
+												<div class="dr-des">
+													<h4 class="mb-1">Jacob Wilson</h4>
+													<p>NDAM/65966/P/2019</p>
+													<p>35, Male</p>
+													<p class="ph">(671) 555-0110</p>
+												</div>
+											</div>
+										</li>
+									</ul>
+                  </div>
+               </div>
+            </div>
+            <div class="section section-main-container">
+               <div class="custom-container">
+                  <div class="row">
+                     <div class="col-md-8 section-left payment-left">
+                        <div class="table-main-container">
+						<h4 class="serv-head">Advance Payment Details</h4>
+                           <div class="table-container pay-table">
+                              <table class="table">
+                                 <thead>
+                                    <tr>
+                                       <th>Date	</th>
+                                       <th>Against</th>
+                                       <th>Remarks</th>
+                                       <th>Total Amt.</th>
+                                       <th>Bal Amt.</th>
+                                       <th>Consume Amt </th>
+                                       <th>Consume </th>
+                                      
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>18 Dec 2021</td>
+                                       <td>OPD</td>
+                                       <td>None</td>
+                                       <td>100000.00</td>
+                                       <td>100000.00</td>
+                                        <td>100000.00</td>
+                                       <td>
+										<div class="action-btn-main line-none d-flex align-items-center">
+												
+												<button class="action-btn check-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4545 8L8.95455 14.5L6 11.5455" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+
+												</button>
+												
+											</div>
+									   </td>
+                                      
+                                    </tr>
+                                    
+                                 </tbody>
+                              </table>
+                              
+                           </div>
+						   
+                        </div>
+						<div class="payment-method-conatiner">
+							<div class="payment-top d-flex align-items-center justify-content-between">
+								<h4 class="serv-head">Select Payment Method</h4>
+								<button class="btn-add">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF368B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8V16" stroke="#FF368B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 12H16" stroke="#FF368B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+								</button>
+							</div>	
+							<ul class="payment-option-list d-flex align-items-center">
+								<li class="d-flex align-items-center">
+									<div class="pay-icon">
+										<svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.7564 3.71289C11.8674 3.71223 10.9982 3.97528 10.2588 4.46875C9.51938 4.96223 8.94294 5.66395 8.60244 6.48513C8.26194 7.30632 8.17267 8.21005 8.34594 9.08197C8.51921 9.9539 8.94722 10.7548 9.57583 11.3834C10.2044 12.012 11.0054 12.4401 11.8773 12.6133C12.7492 12.7866 13.6529 12.6973 14.4741 12.3568C15.2953 12.0163 15.997 11.4399 16.4905 10.7005C16.984 9.96102 17.247 9.09182 17.2464 8.20285C17.2446 7.01258 16.771 5.87157 15.9293 5.02993C15.0877 4.18828 13.9467 3.71466 12.7564 3.71289ZM12.7564 11.3569C12.1326 11.3569 11.5228 11.1719 11.0041 10.8253C10.4855 10.4787 10.0812 9.98616 9.84248 9.40984C9.60376 8.83352 9.5413 8.19935 9.663 7.58753C9.7847 6.97571 10.0851 6.41372 10.5262 5.97262C10.9673 5.53152 11.5293 5.23113 12.1411 5.10943C12.7529 4.98773 13.3871 5.05019 13.9634 5.28891C14.5397 5.52763 15.0323 5.93189 15.3789 6.45057C15.7255 6.96924 15.9104 7.57904 15.9104 8.20285C15.9095 9.03907 15.577 9.84079 14.9857 10.4321C14.3944 11.0234 13.5926 11.356 12.7564 11.3569Z" fill="#838383"/>
+<path d="M30 7.70089C30 6.81289 29.6472 5.96126 29.0193 5.33335C28.3914 4.70544 27.5398 4.35268 26.6518 4.35268H25.5134V3.34821C25.5134 2.46021 25.1606 1.60858 24.5327 0.980669C23.9048 0.352757 23.0532 0 22.1652 0H3.34821C2.46021 0 1.60858 0.352757 0.980669 0.980669C0.352757 1.60858 0 2.46021 0 3.34821V13.058C0 13.946 0.352757 14.7977 0.980669 15.4256C1.60858 16.0535 2.46021 16.4062 3.34821 16.4062H4.48661V17.4107C4.48661 18.2987 4.83936 19.1503 5.46728 19.7783C6.09519 20.4062 6.94682 20.7589 7.83482 20.7589H26.6518C27.5398 20.7589 28.3914 20.4062 29.0193 19.7783C29.6472 19.1503 30 18.2987 30 17.4107V7.70089ZM1.33929 13.058V3.34821C1.33929 2.81541 1.55094 2.30443 1.92769 1.92769C2.30443 1.55094 2.81541 1.33929 3.34821 1.33929H22.1652C22.698 1.33929 23.209 1.55094 23.5857 1.92769C23.9625 2.30443 24.1741 2.81541 24.1741 3.34821V13.058C24.1741 13.5908 23.9625 14.1018 23.5857 14.4786C23.209 14.8553 22.698 15.067 22.1652 15.067H3.34821C2.81541 15.067 2.30443 14.8553 1.92769 14.4786C1.55094 14.1018 1.33929 13.5908 1.33929 13.058ZM28.6607 17.4107C28.6607 17.9435 28.4491 18.4545 28.0723 18.8312C27.6956 19.208 27.1846 19.4196 26.6518 19.4196H7.83482C7.30202 19.4196 6.79104 19.208 6.41429 18.8312C6.03755 18.4545 5.82589 17.9435 5.82589 17.4107V16.4062H22.1652C23.0532 16.4062 23.9048 16.0535 24.5327 15.4256C25.1606 14.7977 25.5134 13.946 25.5134 13.058V5.69196H26.6518C27.1846 5.69196 27.6956 5.90362 28.0723 6.28036C28.4491 6.65711 28.6607 7.16809 28.6607 7.70089V17.4107Z" fill="#838383"/>
+</svg>
+
+									</div>
+									<h4>Cash</h4>
+								</li>
+								<li class="d-flex align-items-center">
+									<div class="pay-icon">
+										<svg width="31" height="22" viewBox="0 0 31 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.9859 0.286133H3.41448C2.562 0.286133 1.74443 0.62478 1.14164 1.22758C0.538842 1.83037 0.200195 2.64794 0.200195 3.50042V18.5004C0.200195 19.3529 0.538842 20.1705 1.14164 20.7733C1.74443 21.3761 2.562 21.7147 3.41448 21.7147H26.9859C27.8384 21.7147 28.656 21.3761 29.2588 20.7733C29.8615 20.1705 30.2002 19.3529 30.2002 18.5004V3.50042C30.2002 2.64794 29.8615 1.83037 29.2588 1.22758C28.656 0.62478 27.8384 0.286133 26.9859 0.286133ZM28.0573 18.5004C28.0573 18.7846 27.9445 19.0571 27.7435 19.258C27.5426 19.459 27.2701 19.5718 26.9859 19.5718H3.41448C3.13032 19.5718 2.8578 19.459 2.65687 19.258C2.45594 19.0571 2.34305 18.7846 2.34305 18.5004V3.50042C2.34305 3.21626 2.45594 2.94374 2.65687 2.7428C2.8578 2.54187 3.13032 2.42899 3.41448 2.42899H26.9859C27.2701 2.42899 27.5426 2.54187 27.7435 2.7428C27.9445 2.94374 28.0573 3.21626 28.0573 3.50042V18.5004Z" fill="#838383"/>
+<path d="M22.1645 9.92873C21.6081 9.92693 21.0586 10.0515 20.5573 10.293C20.0561 10.0515 19.5066 9.92693 18.9502 9.92873C17.9556 9.92873 17.0018 10.3238 16.2985 11.0271C15.5953 11.7303 15.2002 12.6842 15.2002 13.6787C15.2002 14.6733 15.5953 15.6271 16.2985 16.3304C17.0018 17.0336 17.9556 17.4287 18.9502 17.4287C19.5066 17.4305 20.0561 17.306 20.5573 17.0644C21.0586 17.306 21.6081 17.4305 22.1645 17.4287C23.159 17.4287 24.1129 17.0336 24.8161 16.3304C25.5194 15.6271 25.9145 14.6733 25.9145 13.6787C25.9145 12.6842 25.5194 11.7303 24.8161 11.0271C24.1129 10.3238 23.159 9.92873 22.1645 9.92873ZM22.1645 15.2859C21.8154 15.2836 21.4767 15.1669 21.2002 14.9537C21.0138 14.8121 20.7861 14.7354 20.552 14.7354C20.3179 14.7354 20.0902 14.8121 19.9038 14.9537C19.6658 15.1363 19.3815 15.2487 19.0829 15.2781C18.7844 15.3075 18.4836 15.2528 18.2146 15.1201C17.9455 14.9875 17.719 14.7822 17.5606 14.5274C17.4022 14.2727 17.3182 13.9787 17.3182 13.6787C17.3182 13.3788 17.4022 13.0848 17.5606 12.83C17.719 12.5753 17.9455 12.37 18.2146 12.2373C18.4836 12.1046 18.7844 12.0499 19.0829 12.0793C19.3815 12.1087 19.6658 12.2211 19.9038 12.4037C20.0902 12.5454 20.3179 12.6221 20.552 12.6221C20.7861 12.6221 21.0138 12.5454 21.2002 12.4037C21.4033 12.2479 21.6407 12.1428 21.8926 12.0973C22.1445 12.0517 22.4036 12.067 22.6484 12.1419C22.8933 12.2167 23.1166 12.349 23.3 12.5276C23.4834 12.7063 23.6214 12.9261 23.7026 13.1689C23.7838 13.4116 23.8059 13.6703 23.767 13.9233C23.728 14.1763 23.6292 14.4164 23.4787 14.6235C23.3282 14.8306 23.1305 14.9987 22.9019 15.1139C22.6733 15.2292 22.4205 15.2881 22.1645 15.2859Z" fill="#838383"/>
+</svg>
+
+									</div>
+									<h4>Card</h4>
+								</li>
+								<li class="d-flex align-items-center">
+									<div class="pay-icon">
+										<img src="images/upi.png" alt="imgage"/>
+									</div>
+									<h4>UPI</h4>
+								</li>
+								<li class="d-flex align-items-center">
+									<div class="pay-icon">
+										<svg width="31" height="20" viewBox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.01285 0.178712H28.1859C28.8511 0.178712 29.4559 0.449422 29.8921 0.886179C30.3284 1.32243 30.5996 1.92625 30.5996 2.59195V17.4085C30.5996 18.0742 30.3284 18.678 29.8921 19.1143C29.4559 19.5506 28.8516 19.8218 28.1859 19.8218H3.01285C2.34715 19.8218 1.74333 19.5506 1.30708 19.1143C0.870823 18.6781 0.599609 18.0742 0.599609 17.4085V2.59195C0.599609 1.92826 0.870822 1.32445 1.30809 0.887184L1.30708 0.886178C1.74333 0.449924 2.34715 0.178711 3.01285 0.178711L3.01285 0.178712ZM28.7006 17.9238L28.6996 17.9228C28.8314 17.791 28.9134 17.6088 28.9134 17.4085V2.59197C28.9134 2.3922 28.8314 2.21005 28.6996 2.07822C28.5677 1.94639 28.3861 1.86487 28.1853 1.86487H3.01231C2.81205 1.86487 2.6299 1.94639 2.49806 2.07822L2.49706 2.07721C2.36573 2.20904 2.28472 2.3912 2.28472 2.59146V17.408C2.28472 17.6078 2.36673 17.79 2.49857 17.9218V17.9233C2.62889 18.0536 2.81154 18.1356 3.01231 18.1356H28.1853C28.3861 18.1356 28.5688 18.0541 28.7001 17.9233L28.7006 17.9238Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3143 8.30929H20.879C20.881 8.30929 20.883 8.30929 20.8845 8.30929C21.1769 8.30929 21.4129 8.07329 21.4129 7.78095C21.4129 7.54898 21.2634 7.35224 21.0561 7.28079L15.814 4.92239C15.6761 4.8605 15.5192 4.8605 15.3808 4.92239L10.0979 7.29991C9.86996 7.40155 9.74568 7.64912 9.79801 7.89215C9.85034 8.13569 10.0652 8.30929 10.3143 8.30929H10.3143ZM10.9749 14.0667C10.6831 14.0667 10.4466 14.3032 10.4466 14.5955C10.4466 14.8873 10.6826 15.1238 10.9749 15.1238H20.2193C20.5112 15.1238 20.7477 14.8873 20.7477 14.5955C20.7477 14.3037 20.5112 14.0667 20.2193 14.0667H20.087V9.83593H20.3753C20.636 9.83593 20.8473 9.60095 20.8473 9.31011C20.8468 9.01928 20.636 8.78379 20.3753 8.78379H10.9417C10.6806 8.78379 10.4698 9.01928 10.4698 9.31011C10.4698 9.60045 10.6806 9.83593 10.9417 9.83593H11.1073V14.0667H10.9749H10.9749ZM12.1635 9.83593H13.748V14.0667H12.1635V9.83593ZM14.8041 9.83593H16.3886V14.0667H14.8041V9.83593ZM17.4458 9.83593H19.0303V14.0667H17.4458V9.83593Z" fill="#838383"/>
+</svg>
+
+									</div>
+									<h4>Net Banking</h4>
+								</li>
+								<li class="d-flex align-items-center">
+									<div class="pay-icon">
+										<svg width="31" height="16" viewBox="0 0 31 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M30.388 15.5394H1.21157C0.984118 15.5394 0.799805 15.3551 0.799805 15.1276V0.872702C0.799805 0.645251 0.984118 0.460938 1.21157 0.460938H30.388C30.6155 0.460938 30.7998 0.645251 30.7998 0.872702V15.1276C30.7998 15.3551 30.6155 15.5394 30.388 15.5394ZM1.62333 14.7158H29.9763V1.28447H1.62333V14.7158Z" fill="#838383"/>
+<path d="M27.3464 7.21854H9.83852C9.61107 7.21854 9.42676 7.03423 9.42676 6.80677V4.43423C9.42676 4.20677 9.61107 4.02246 9.83852 4.02246H27.3464C27.5738 4.02246 27.7581 4.20677 27.7581 4.43423V6.80481C27.7581 7.03423 27.5738 7.21854 27.3464 7.21854ZM10.2503 6.39501H26.9346V4.84795H10.2503V6.39501Z" fill="#838383"/>
+<path d="M7.63294 5.8852C7.51529 5.69501 7.35059 5.54402 7.14274 5.43422C6.92902 5.32246 6.59176 5.21069 6.14078 5.10481C5.67411 4.99501 5.37215 4.8852 5.24666 4.77932C5.13686 4.68716 5.08196 4.57736 5.08196 4.44402C5.08196 4.29893 5.14078 4.1852 5.26039 4.09893C5.42706 3.97736 5.65647 3.91657 5.9447 3.91657C6.2251 3.91657 6.44078 3.9754 6.58392 4.08912C6.66431 4.15383 6.73098 4.2401 6.78 4.34795C6.84666 4.49305 6.99568 4.5852 7.16039 4.57736H7.18196C7.32117 4.57148 7.4447 4.49501 7.51333 4.37344C7.58196 4.25383 7.58196 4.10873 7.51725 3.98912C7.44666 3.85971 7.35255 3.74206 7.2349 3.64206C6.95255 3.39697 6.52117 3.27344 5.95451 3.27344C5.60549 3.27344 5.30549 3.32638 5.06039 3.4303C4.81921 3.53226 4.63294 3.68324 4.50745 3.87932C4.38 4.0754 4.31529 4.28716 4.31529 4.51069C4.31529 4.86363 4.44862 5.15579 4.72313 5.40089C4.91725 5.5754 5.26627 5.72638 5.75843 5.84795C6.15843 5.94795 6.40745 6.01461 6.51921 6.05383C6.69372 6.11657 6.81529 6.18912 6.88784 6.27736C6.96235 6.36755 7.00157 6.47736 7.00157 6.60285C7.00157 6.79501 6.91529 6.96363 6.74666 7.10481C6.58 7.24403 6.3349 7.31265 6.01725 7.31265C5.71529 7.31265 5.47019 7.23422 5.2898 7.07932C5.17804 6.9852 5.0898 6.85579 5.0251 6.69697C4.96431 6.54795 4.81921 6.45187 4.65647 6.45187C4.64274 6.45187 4.63098 6.45187 4.61725 6.45383C4.4898 6.46559 4.38 6.53618 4.31333 6.64403C4.24862 6.75187 4.23686 6.87932 4.28196 6.99304C4.37608 7.22834 4.51333 7.42638 4.6898 7.57932C4.99176 7.8401 5.4349 7.97344 6.00745 7.97344C6.40157 7.97344 6.7349 7.91854 6.99764 7.80873C7.25451 7.70089 7.45843 7.53422 7.59764 7.31265C7.73882 7.09108 7.80941 6.84991 7.80941 6.59697C7.80941 6.31265 7.75059 6.0754 7.63294 5.8852Z" fill="#838383"/>
+<path d="M6.03091 3.76333C5.80345 3.76333 5.61914 3.57902 5.61914 3.35157V3.01235C5.61914 2.7849 5.80345 2.60059 6.03091 2.60059C6.25836 2.60059 6.44267 2.7849 6.44267 3.01235V3.35157C6.44267 3.57902 6.25836 3.76333 6.03091 3.76333Z" fill="#838383"/>
+<path d="M6.03091 8.64028C5.80345 8.64028 5.61914 8.45597 5.61914 8.22852V7.8893C5.61914 7.66185 5.80345 7.47754 6.03091 7.47754C6.25836 7.47754 6.44267 7.66185 6.44267 7.8893V8.22852C6.44267 8.45597 6.25836 8.64028 6.03091 8.64028Z" fill="#838383"/>
+<path d="M27.3469 13.054H20.445C20.2175 13.054 20.0332 12.8697 20.0332 12.6422C20.0332 12.4148 20.2175 12.2305 20.445 12.2305H27.3469C27.5744 12.2305 27.7587 12.4148 27.7587 12.6422C27.7587 12.8697 27.5744 13.054 27.3469 13.054Z" fill="#838383"/>
+<path d="M22.3526 11.1438C22.1232 11.1438 21.8977 11.083 21.7017 10.9653C21.5585 10.881 21.435 10.7712 21.335 10.6398H21.1546V10.3085C21.1017 10.1673 21.0762 10.0183 21.0762 9.86534C21.0762 9.16142 21.6487 8.58887 22.3546 8.58887C23.0585 8.58887 23.6311 9.16142 23.6311 9.86534C23.6311 10.132 23.5487 10.3869 23.3958 10.6046C23.2997 10.7398 23.1762 10.8575 23.035 10.9457L22.8762 11.1046L22.786 11.0673C22.6468 11.1183 22.4997 11.1438 22.3526 11.1438ZM21.935 10.0457L21.9409 10.0575C21.9781 10.1398 22.0428 10.2124 22.1232 10.2595C22.1938 10.3006 22.2723 10.3222 22.3546 10.3222C22.433 10.3222 22.5095 10.3026 22.5762 10.2634L22.586 10.2575C22.6389 10.2261 22.6879 10.181 22.7232 10.13C22.7781 10.0536 22.8056 9.96338 22.8056 9.8673C22.8056 9.61632 22.6017 9.41436 22.3526 9.41436C22.1017 9.41436 21.8977 9.61828 21.8977 9.8673C21.8977 9.93004 21.9095 9.98887 21.935 10.0457Z" fill="#838383"/>
+<path d="M22.779 11.0315C22.6711 11.0315 22.5652 10.9904 22.4868 10.91C22.326 10.7492 22.326 10.4884 22.4868 10.3276C22.5672 10.2472 22.6711 10.208 22.775 10.208C22.777 10.208 22.777 10.208 22.779 10.208C23.0064 10.208 23.1907 10.3923 23.1907 10.6198C23.1907 10.7864 23.0907 10.9374 22.9358 11.0002C22.8848 11.0217 22.8319 11.0315 22.779 11.0315Z" fill="#838383"/>
+<path d="M20.7197 11.4478C20.4472 11.4478 20.2629 11.4321 20.2433 11.4301C20.0158 11.4105 19.8491 11.2105 19.8688 10.985C19.8884 10.7595 20.0864 10.5909 20.3139 10.6105C20.3256 10.6105 21.4609 10.7027 22.2315 10.3948C22.4433 10.3105 22.6825 10.4125 22.7668 10.6242C22.8511 10.836 22.7491 11.0752 22.5374 11.1595C21.9335 11.4007 21.1942 11.4478 20.7197 11.4478Z" fill="#838383"/>
+<path d="M25.1095 11.5775C24.9997 11.5775 24.8899 11.55 24.786 11.4892C24.4879 11.3128 24.4879 10.9559 24.5173 10.5892C23.686 11.1324 22.9389 11.3285 22.2918 11.1775C22.0703 11.1245 21.933 10.903 21.986 10.6814C22.0389 10.4598 22.2605 10.3226 22.482 10.3755C22.9742 10.4912 23.6467 10.2383 24.4291 9.64414C24.7232 9.42061 24.9507 9.46375 25.0899 9.54022C25.4232 9.72453 25.386 10.1363 25.3507 10.5343C25.3487 10.5598 25.3467 10.5873 25.3428 10.6167C25.4546 10.5324 25.6095 10.399 25.8154 10.1834C26.1017 9.88336 26.333 9.58532 26.335 9.58336C26.4742 9.40296 26.733 9.36963 26.9134 9.50885C27.0938 9.64806 27.1271 9.90688 26.9879 10.0853C26.9742 10.103 26.6644 10.503 26.2918 10.8755C25.9664 11.1971 25.5271 11.5775 25.1095 11.5775Z" fill="#838383"/>
+<path d="M21.9137 11.026C21.8255 11.026 21.7353 10.9965 21.6608 10.9397C21.6471 10.9279 21.6333 10.9162 21.6196 10.9044C21.4588 10.7436 21.4588 10.4828 21.6196 10.322C21.7667 10.175 22 10.1632 22.1608 10.2867C22.1784 10.3005 22.1941 10.3142 22.2078 10.3299C22.3667 10.4926 22.3608 10.7534 22.198 10.9122C22.1196 10.9867 22.0157 11.026 21.9137 11.026Z" fill="#838383"/>
+<path d="M21.567 10.6399C21.4102 10.6399 21.2729 10.5517 21.2043 10.4223C21.1945 10.4046 21.1886 10.3929 21.1847 10.387H21.1866C21.167 10.338 21.1553 10.285 21.1553 10.2282H21.5161L21.567 10.2046V9.81836C21.7945 9.81836 21.9788 10.0027 21.9788 10.2301C21.9788 10.4576 21.7925 10.6399 21.567 10.6399Z" fill="#838383"/>
+<path d="M14.8175 13.054H4.7018C4.47435 13.054 4.29004 12.8697 4.29004 12.6422C4.29004 12.4148 4.47435 12.2305 4.7018 12.2305H14.8175C15.0449 12.2305 15.2293 12.4148 15.2293 12.6422C15.2293 12.8697 15.0449 13.054 14.8175 13.054Z" fill="#838383"/>
+<path d="M14.8175 10.681H4.7018C4.47435 10.681 4.29004 10.4966 4.29004 10.2692C4.29004 10.0417 4.47435 9.85742 4.7018 9.85742H14.8175C15.0449 9.85742 15.2293 10.0417 15.2293 10.2692C15.2293 10.4966 15.0449 10.681 14.8175 10.681Z" fill="#838383"/>
+</svg>
+
+									</div>
+									<h4>Cheque</h4>
+								</li>
+							</ul>
+						</div>
+						 <div class="table-main-container">
+						<h4 class="serv-head">Payment Details</h4>
+                           <div class="table-container pay-table">
+                              <table class="table">
+                                 <thead>
+                                    <tr>
+                                       <th>Pay Mode	</th>
+                                       <th>Amount</th>
+                                       <th>Transaction Id</th>
+                                       <th>Bank </th>
+                                       <th>Date</th>
+                                      <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>Card</td>
+                                       <td>800.00</td>
+                                       <td>1234</td>
+                                       <td>HSBS Bank</td>
+                                       <td>18 Dec 2021</td>
+                                       
+                                       <td>
+										<div class="action-btn-main line-none d-flex align-items-center">
+												<button class="action-btn close-btn" data-target="#cancel-appoint" data-toggle="modal">
+                                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                   <path d="M14 8L8 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                   <path d="M8 8L14 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+												<div class="tooltip-text">Cancel Appointment</div>
+                                             </button>
+												
+											</div>
+									   </td>
+                                      
+                                    </tr>
+                                    
+                                 </tbody>
+                              </table>
+                              
+                           </div>
+						   
+                        </div>
+						<div class="payment-bottom d-flex align-items-center">
+							<label class="mr-3 d-block">Received Amount</label>
+							<div class="payment-input d-flex align-items-center">
+								<div class="invoice-form-input">
+												  <input type="text" class="form-control">
+												  <div class="input-add">
+													<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.136 0.415999C3.95733 0.415999 4.576 0.730666 4.992 1.36C5.41867 1.97867 5.632 2.85333 5.632 3.984C5.632 5.11467 5.42933 6 5.024 6.64C4.62933 7.26933 4 7.584 3.136 7.584C2.34667 7.584 1.744 7.26933 1.328 6.64C0.912 6 0.704 5.11467 0.704 3.984C0.704 2.85333 0.896 1.97867 1.28 1.36C1.67467 0.730666 2.29333 0.415999 3.136 0.415999ZM10.688 0.575999L4.352 12H2.928L9.264 0.575999H10.688ZM3.136 1.6C2.44267 1.6 2.096 2.39467 2.096 3.984C2.096 5.59467 2.44267 6.4 3.136 6.4C3.872 6.4 4.24 5.59467 4.24 3.984C4.24 2.39467 3.872 1.6 3.136 1.6ZM10.432 4.992C11.2427 4.992 11.8613 5.30667 12.288 5.936C12.7147 6.55467 12.928 7.42933 12.928 8.56C12.928 9.68 12.7253 10.56 12.32 11.2C11.9253 11.84 11.296 12.16 10.432 12.16C9.632 12.16 9.024 11.84 8.608 11.2C8.192 10.56 7.984 9.68 7.984 8.56C7.984 7.42933 8.176 6.55467 8.56 5.936C8.95467 5.30667 9.57867 4.992 10.432 4.992ZM10.432 6.176C9.73867 6.176 9.392 6.97067 9.392 8.56C9.392 10.16 9.73867 10.96 10.432 10.96C11.1573 10.96 11.52 10.16 11.52 8.56C11.52 6.97067 11.1573 6.176 10.432 6.176Z" fill="#C8C8C8"></path>
+</svg>
+
+												  </div>
+												</div>
+												<div class="in-arrow">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12H19" stroke="#838383" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 5L19 12L12 19" stroke="#838383" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+											</div>
+											<div class="invoice-form-input">
+												  <input type="text" class="form-control">
+												  <div class="input-add">
+													Amt.
+												  </div>
+												</div>
+												<label class="ml-3 d-block">Amount to be return </label>
+							</div>
+						</div>
+                     </div>
+					 <div class="section-right col-md-4">
+						<h4 class="serv-head">Invoice For</h4>
+						<div class="pay-search mb-2">
+							<div class="form-group has-search w-100">
+                           
+                           <input type="text" class="form-control w-100" placeholder="Search Patients/MR No./Mobile Number">
+                        </div>
+						</div>
+						<ul class="dr-list invoice-person-list d-flex align-items-center w-100">
+								<li class="w-100">
+											<div class="p-des w-100 d-flex align-items-center ">
+												<div class="dr-img mr-3">
+												<img src="images/hidden-pic.png" alt="image" class="img-fluid">
+												</div>
+												<div class="dr-des">
+													<h4 class="mb-1">Profile Hidden</h4>
+													<p>NDAM/65966/P/2019</p>
+													<p>32, Male</p>
+													<p class="ph">Phone No. Hidden</p>
+												</div>
+											</div>
+											
+										</li>
+										
+									</ul>
+									
+						<form action="#" class="p-form payment-form-list">
+									
+									  <div class="form-input-main ">
+                                    <div class="form-input bg-white">
+										<input type="text" class="f-input " placeholder=""/>
+										<label class="form-label">Payable Amount</label>
+									</div>
+                                 </div>
+								<div class="form-input-main ">
+                                    <div class="form-input bg-white">
+										<input type="text" class="f-input " placeholder=""/>
+										<label class="form-label">Transaction Id</label>
+									</div>
+                                 </div>
+								
+									<div class="form-input">
+										<div class="form-select form-select-main">
+											 <select id="sources" name="">
+											  <option value="hide">Bank</option>
+											  <option value="option1" >option1</option>
+											  <option value="option2">option2</option>
+											  <option value="option3">option3</option>
+											  <option value="option4">option4</option>
+										   </select>
+										</div>
+									</div>
+									  <div class="form-input-main form-input-date">
+                                    <div class="form-input  bg-white  date" data-date-format="mm-dd-yyyy">
+										
+                                       <input class="f-input " type="text"   name="date" placeholder="" data-date-format="mm-dd-yyyy"/>
+									    <label class="form-label">Date of Birth</label>
+                                       <span class="input-group-addon "  id="date" ><img src="images/date.png" alt="Date"/></span>
+									  
+                                   
+									</div>									
+                                 </div>
+								 <div class="form-input-main ">
+                                    <div class="form-input bg-white">
+										<input type="text" class="f-input " placeholder=""/>
+										<label class="form-label">Pan Card Number</label>
+									</div>
+                                 </div>
+								
+									<div class="payment-button d-flex align-items-center justify-content-between">
+										<button class="btn-all btn-orange d-flex align-items-center w-50 mr-3">Pay Now
+                        </button>
+						<button class="btn-all-border btn-pink d-flex align-items-center w-50">Pay Later</button>
+									</div>
+						</form>			
+					 </div>
+                  </div>
+				  
+               </div>
+            </div>
+        </div>
+		</div>
+      <!-- Bootstrap Js File -->
+    
+      <!-- Javascript -->
+      <script  src="assets/js/jquery.min.js"></script>
+      <script  src="assets/js/Popper.js"></script>
+      <script  src="assets/js/bootstrap.min.js"></script>
+      <script  src="assets/js/jquery.easing.min.js"></script>
+	  	   <script  src="assets/js/bootstrap-datepicker.js"></script>
+
+      <script  src="assets/js/main.js"></script>
+	   <script  src="assets/js/select.js"></script>
+      <!-- Appear js -->
+      <script src="assets/js/appear.min.js"></script>
+   </body>
+</html>

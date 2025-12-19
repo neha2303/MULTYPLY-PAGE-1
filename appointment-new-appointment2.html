@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+      <title>Multiply Prototype</title>
+       <!-- CSS -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="assets/css/style.css"/>
+      <link rel="stylesheet" href="assets/css/responsive.css">
+      <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.css"/>
+      <!-- Animate Css file -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+   </head>
+   <body id="top">
+      <div class="page-container">
+		        <nav class="vertical-nav">
+            <div class="sidebar">
+               <div class="sidenav-logo  d-flex  align-items-center">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.99627 17.2594C2.82619 14.0894 2.8262 8.94968 5.99627 5.77961L58.2598 58.0431C55.0897 61.2132 49.95 61.2132 46.78 58.0431L5.99627 17.2594Z" fill="url(#paint0_linear)"/>
+<path d="M58.2601 46.5638C61.4302 49.7339 61.4301 54.8736 58.2601 58.0436L5.99654 5.7801C9.16661 2.61003 14.3063 2.61002 17.4764 5.7801L58.2601 46.5638Z" fill="url(#paint1_linear)"/>
+<path d="M46.5247 5.73992C49.6948 2.56985 54.8345 2.56985 58.0046 5.73993L5.74104 58.0035C2.57097 54.8334 2.57096 49.6937 5.74103 46.5236L46.5247 5.73992Z" fill="url(#paint2_linear)"/>
+<path d="M17.2204 58.0042C14.0503 61.1743 8.91062 61.1743 5.74054 58.0042L58.0041 5.74068C61.1742 8.91075 61.1742 14.0505 58.0041 17.2205L17.2204 58.0042Z" fill="url(#paint3_linear)"/>
+<defs>
+<linearGradient id="paint0_linear" x1="3.12631" y1="8.64957" x2="66.9617" y2="75.4537" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF7438"/>
+<stop offset="1" stop-color="#FF7438" stop-opacity="0.19"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="61.13" y1="55.1737" x2="-2.70531" y2="-11.6304" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF7438"/>
+<stop offset="1" stop-color="#FF7438" stop-opacity="0.19"/>
+</linearGradient>
+<linearGradient id="paint2_linear" x1="55.1346" y1="2.86996" x2="-11.6695" y2="66.7053" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00C1FF"/>
+<stop offset="1" stop-color="#04C0FF" stop-opacity="0.15"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x1="8.61051" y1="60.8742" x2="75.4146" y2="-2.96117" gradientUnits="userSpaceOnUse">
+<stop stop-color="#08C3FF"/>
+<stop offset="1" stop-color="#06C3FF" stop-opacity="0.15"/>
+</linearGradient>
+</defs>
+</svg>
+
+               </div>
+               <ul class="nav-list accordion" id="accordion">
+                   <li class="nav-item ">
+					<a href="#" class="nav-link d-flex align-items-center">
+						<div class="nav-list-img">
+                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.81641C0 1.26412 0.447715 0.816406 1 0.816406H8C8.55228 0.816406 9 1.26412 9 1.81641V8.81641C9 9.36869 8.55228 9.81641 8 9.81641H1C0.447715 9.81641 0 9.36869 0 8.81641V1.81641ZM2 2.81641V7.81641H7V2.81641H2Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 1.81641C11 1.26412 11.4477 0.816406 12 0.816406H19C19.5523 0.816406 20 1.26412 20 1.81641V8.81641C20 9.36869 19.5523 9.81641 19 9.81641H12C11.4477 9.81641 11 9.36869 11 8.81641V1.81641ZM13 2.81641V7.81641H18V2.81641H13Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 12.8164C11 12.2641 11.4477 11.8164 12 11.8164H19C19.5523 11.8164 20 12.2641 20 12.8164V19.8164C20 20.3687 19.5523 20.8164 19 20.8164H12C11.4477 20.8164 11 20.3687 11 19.8164V12.8164ZM13 13.8164V18.8164H18V13.8164H13Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.8164C0 12.2641 0.447715 11.8164 1 11.8164H8C8.55228 11.8164 9 12.2641 9 12.8164V19.8164C9 20.3687 8.55228 20.8164 8 20.8164H1C0.447715 20.8164 0 20.3687 0 19.8164V12.8164ZM2 13.8164V18.8164H7V13.8164H2Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                        Dashboard
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+					</a>
+					<ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">Operations</a></li>
+					  <li  class="sub-nav-link"><a href="#">Medical</a></li>
+					  <li  class="sub-nav-link"><a href="#">Finance</a></li>
+					  <li  class="sub-nav-link"><a href="#">MIS Reports </a></li>
+					   
+					</ul>
+				  </li>
+                 
+                  <li class="nav-item ">
+                     <a href="#" class="nav-link d-flex align-items-center">
+                        <div class="nav-list-img">
+                   <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.46447 14.2809C2.40215 13.3432 3.67392 12.8164 5 12.8164H13C14.3261 12.8164 15.5979 13.3432 16.5355 14.2809C17.4732 15.2186 18 16.4903 18 17.8164V19.8164C18 20.3687 17.5523 20.8164 17 20.8164C16.4477 20.8164 16 20.3687 16 19.8164V17.8164C16 17.0208 15.6839 16.2577 15.1213 15.6951C14.5587 15.1325 13.7956 14.8164 13 14.8164H5C4.20435 14.8164 3.44129 15.1325 2.87868 15.6951C2.31607 16.2577 2 17.0208 2 17.8164V19.8164C2 20.3687 1.55228 20.8164 1 20.8164C0.447715 20.8164 0 20.3687 0 19.8164V17.8164C0 16.4903 0.526784 15.2186 1.46447 14.2809Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9 2.81641C7.34315 2.81641 6 4.15955 6 5.81641C6 7.47326 7.34315 8.81641 9 8.81641C10.6569 8.81641 12 7.47326 12 5.81641C12 4.15955 10.6569 2.81641 9 2.81641ZM4 5.81641C4 3.05498 6.23858 0.816406 9 0.816406C11.7614 0.816406 14 3.05498 14 5.81641C14 8.57783 11.7614 10.8164 9 10.8164C6.23858 10.8164 4 8.57783 4 5.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                       Patient
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Registration</a></li>
+					  <li  class="sub-nav-link"><a href="#">View Patient</a></li>
+					  <li  class="sub-nav-link"><a href="#">Sponsor Details</a></li>
+					  <li  class="sub-nav-link"><a href="#">Link Partner</a></li>
+					   
+					</ul>
+                  </li>
+				  <li class="active nav-item ">
+                     <a href="#" class="nav-link d-flex align-items-center">
+                        <div class="nav-list-img">
+                         <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3 4.81641C2.44772 4.81641 2 5.26412 2 5.81641V19.8164C2 20.3687 2.44772 20.8164 3 20.8164H17C17.5523 20.8164 18 20.3687 18 19.8164V5.81641C18 5.26412 17.5523 4.81641 17 4.81641H3ZM0 5.81641C0 4.15955 1.34315 2.81641 3 2.81641H17C18.6569 2.81641 20 4.15955 20 5.81641V19.8164C20 21.4733 18.6569 22.8164 17 22.8164H3C1.34315 22.8164 0 21.4733 0 19.8164V5.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14 0.816406C14.5523 0.816406 15 1.26412 15 1.81641V5.81641C15 6.36869 14.5523 6.81641 14 6.81641C13.4477 6.81641 13 6.36869 13 5.81641V1.81641C13 1.26412 13.4477 0.816406 14 0.816406Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 0.816406C6.55228 0.816406 7 1.26412 7 1.81641V5.81641C7 6.36869 6.55228 6.81641 6 6.81641C5.44772 6.81641 5 6.36869 5 5.81641V1.81641C5 1.26412 5.44772 0.816406 6 0.816406Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 9.81641C0 9.26412 0.447715 8.81641 1 8.81641H19C19.5523 8.81641 20 9.26412 20 9.81641C20 10.3687 19.5523 10.8164 19 10.8164H1C0.447715 10.8164 0 10.3687 0 9.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                        Appointments
+                     </a>
+                  </li>
+				     <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                       <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 2.81641C6.02944 2.81641 2 6.84584 2 11.8164C2 16.787 6.02944 20.8164 11 20.8164C15.9706 20.8164 20 16.787 20 11.8164C20 6.84584 15.9706 2.81641 11 2.81641ZM0 11.8164C0 5.74127 4.92487 0.816406 11 0.816406C17.0751 0.816406 22 5.74127 22 11.8164C22 17.8915 17.0751 22.8164 11 22.8164C4.92487 22.8164 0 17.8915 0 11.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 4.81641C11.5523 4.81641 12 5.26412 12 5.81641V11.1984L15.4472 12.922C15.9412 13.169 16.1414 13.7696 15.8944 14.2636C15.6474 14.7576 15.0468 14.9578 14.5528 14.7108L10.5528 12.7108C10.214 12.5414 10 12.1952 10 11.8164V5.81641C10 5.26412 10.4477 4.81641 11 4.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                        Check-In List
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">EMR</a></li>
+					  <li  class="sub-nav-link"><a href="#">ART</a></li>
+					   <li  class="sub-nav-link"><a href="#">Invoice</a></li>
+					</ul>
+                  </li>
+				    <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                       <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3 2.81641C2.44772 2.81641 2 3.26412 2 3.81641V7.81641C2 8.36869 2.44772 8.81641 3 8.81641H19C19.5523 8.81641 20 8.36869 20 7.81641V3.81641C20 3.26412 19.5523 2.81641 19 2.81641H3ZM0 3.81641C0 2.15955 1.34315 0.816406 3 0.816406H19C20.6569 0.816406 22 2.15955 22 3.81641V7.81641C22 9.47326 20.6569 10.8164 19 10.8164H3C1.34315 10.8164 0 9.47326 0 7.81641V3.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3 14.8164C2.44772 14.8164 2 15.2641 2 15.8164V19.8164C2 20.3687 2.44772 20.8164 3 20.8164H19C19.5523 20.8164 20 20.3687 20 19.8164V15.8164C20 15.2641 19.5523 14.8164 19 14.8164H3ZM0 15.8164C0 14.1596 1.34315 12.8164 3 12.8164H19C20.6569 12.8164 22 14.1596 22 15.8164V19.8164C22 21.4733 20.6569 22.8164 19 22.8164H3C1.34315 22.8164 0 21.4733 0 19.8164V15.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 5.81641C4 5.26412 4.44772 4.81641 5 4.81641H5.01C5.56228 4.81641 6.01 5.26412 6.01 5.81641C6.01 6.36869 5.56228 6.81641 5.01 6.81641H5C4.44772 6.81641 4 6.36869 4 5.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 17.8164C4 17.2641 4.44772 16.8164 5 16.8164H5.01C5.56228 16.8164 6.01 17.2641 6.01 17.8164C6.01 18.3687 5.56228 18.8164 5.01 18.8164H5C4.44772 18.8164 4 18.3687 4 17.8164Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Billing
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">Invoice List</a></li>
+					  <li  class="sub-nav-link"><a href="#">Service Invoice</a></li>
+					  <li  class="sub-nav-link"><a href="#">Pharmacy Invoice</a></li>
+					   <li  class="sub-nav-link"><a href="#">Corporate Invoice</a></li>
+					    <li  class="sub-nav-link"><a href="#">Refund Service Invoice</a></li>
+						<li  class="sub-nav-link"><a href="#">Pharmacy Returns</a></li>
+						<li  class="sub-nav-link"><a href="#">Patient Advance</a></li>
+						<li  class="sub-nav-link"><a href="#">Refund Patient Advance</a></li>
+						<li  class="sub-nav-link"><a href="#">Package Consumption</a></li>
+						<li  class="sub-nav-link"><a href="#">Payment Mode Change</a></li>
+						<li  class="sub-nav-link"><a href="#">Doctor Payment</a></li>
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                        <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.08619 1.41027C9.24669 1.04914 9.60481 0.816406 10 0.816406C11.0609 0.816406 12.0783 1.23783 12.8284 1.98798C13.5786 2.73812 14 3.75554 14 4.81641V7.81641H18.6549C19.0876 7.8124 19.5162 7.90207 19.911 8.0793C20.3078 8.25737 20.6611 8.51957 20.9465 8.84774C21.2318 9.17591 21.4424 9.5622 21.5637 9.97985C21.6849 10.3975 21.7139 10.8365 21.6487 11.2665L20.2687 20.2663C20.2687 20.2666 20.2687 20.2661 20.2687 20.2663C20.1601 20.9814 19.7966 21.6339 19.2456 22.1024C18.6958 22.5696 17.9961 22.8231 17.2748 22.8164H3C2.20435 22.8164 1.44129 22.5003 0.87868 21.9377C0.31607 21.3751 0 20.6121 0 19.8164V12.8164C0 12.0208 0.31607 11.2577 0.87868 10.6951C1.44129 10.1325 2.20435 9.81641 3 9.81641H5.35013L9.08619 1.41027ZM7 11.0286L10.6078 2.91101C10.9092 3.00716 11.1864 3.17435 11.4142 3.40219C11.7893 3.77727 12 4.28597 12 4.81641V8.81641C12 9.36869 12.4477 9.81641 13 9.81641H18.66L18.6713 9.81634C18.8163 9.8147 18.9599 9.84459 19.0921 9.90395C19.2244 9.96331 19.3421 10.0507 19.4373 10.1601C19.5324 10.2695 19.6026 10.3983 19.643 10.5375C19.6834 10.6766 19.6931 10.8227 19.6714 10.9659C19.6714 10.9658 19.6714 10.9661 19.6714 10.9659L18.2913 19.9665C18.2551 20.2049 18.134 20.4223 17.9503 20.5785C17.7665 20.7347 17.5325 20.8192 17.2913 20.8165L7 20.8164V11.0286ZM5 20.8164V11.8164H3C2.73478 11.8164 2.48043 11.9218 2.29289 12.1093C2.10536 12.2968 2 12.5512 2 12.8164V19.8164C2 20.0816 2.10536 20.336 2.29289 20.5235C2.48043 20.7111 2.73478 20.8164 3 20.8164H5Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Approval
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					 <li class="sub-nav-link"><a href="#">Dashboard</a></li>
+					  <li class="sub-nav-link"><a href="#">Concession Invoice</a></li>
+					  <li  class="sub-nav-link"><a href="#">Refund Invoice</a></li>
+					   <li  class="sub-nav-link"><a href="#">Pharmacy Returns</a></li>
+					    <li  class="sub-nav-link"><a href="#">Advance Refund</a></li>
+						<li  class="sub-nav-link"><a href="#">Store Indent</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Requisition</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Received Note</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Return Note</a></li>
+						<li  class="sub-nav-link"><a href="#">Scrap Sale</a></li>
+						<li  class="sub-nav-link"><a href="#">Stock Adjustment</a></li>
+						<li  class="sub-nav-link"><a href="#">Work Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Expired Item Return</a></li>
+						<li  class="sub-nav-link"><a href="#">MRP Adjustment</a></li>
+						<li  class="sub-nav-link"><a href="#">Direct Issue</a></li>
+					</ul>
+                  </li>
+                   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                       <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.81634L2 4.81641L2 4.81647C2 4.81736 1.99998 4.82162 2.00305 4.8317C2.00645 4.84284 2.01483 4.86486 2.03507 4.89784C2.07752 4.96698 2.16408 5.07093 2.32624 5.19873C2.65642 5.45894 3.19616 5.73701 3.95227 5.98904C5.45402 6.48963 7.59229 6.81641 10 6.81641C12.4077 6.81641 14.546 6.48963 16.0477 5.98904C16.8038 5.73701 17.3436 5.45894 17.6738 5.19873C17.8359 5.07093 17.9225 4.96698 17.9649 4.89784C17.9852 4.86486 17.9935 4.84284 17.9969 4.8317C18 4.82162 18 4.81736 18 4.81647V4.81641C18 4.81568 18.0001 4.81147 17.9969 4.80111C17.9935 4.78997 17.9852 4.76796 17.9649 4.73497C17.9225 4.66583 17.8359 4.56188 17.6738 4.43408C17.3436 4.17387 16.8038 3.8958 16.0477 3.64377C14.546 3.14318 12.4077 2.81641 10 2.81641C7.59229 2.81641 5.45402 3.14318 3.95227 3.64377C3.19616 3.8958 2.65642 4.17387 2.32624 4.43408C2.16408 4.56188 2.07752 4.66583 2.03507 4.73497C2.01483 4.76796 2.00645 4.78997 2.00305 4.80111C1.99998 4.8112 2 4.81545 2 4.81634ZM3.31981 1.7464C5.07541 1.1612 7.43715 0.816406 10 0.816406C12.5629 0.816406 14.9246 1.1612 16.6802 1.7464C17.5528 2.03726 18.331 2.40564 18.9117 2.86326C19.4811 3.312 20 3.96446 20 4.81641C20 5.66835 19.4811 6.32082 18.9117 6.76955C18.331 7.22717 17.5528 7.59555 16.6802 7.88641C14.9246 8.47161 12.5629 8.81641 10 8.81641C7.43715 8.81641 5.07541 8.47161 3.31981 7.88641C2.44724 7.59555 1.66896 7.22717 1.08829 6.76955C0.518893 6.32082 0 5.66835 0 4.81641C0 3.96446 0.518893 3.312 1.08829 2.86326C1.66896 2.40564 2.44724 2.03726 3.31981 1.7464Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.8164C1.55228 10.8164 2 11.2641 2 11.8164C2 11.8183 2.00008 11.8234 2.0034 11.8344C2.00695 11.8462 2.01544 11.8685 2.03558 11.9015C2.07772 11.9707 2.16348 12.0744 2.32419 12.2017C2.65159 12.4611 3.18788 12.7387 3.94167 12.9904C5.43891 13.4902 7.57676 13.8164 10 13.8164C12.4232 13.8164 14.5611 13.4902 16.0583 12.9904C16.8121 12.7387 17.3484 12.4611 17.6758 12.2017C17.8365 12.0744 17.9223 11.9707 17.9644 11.9015C17.9846 11.8685 17.993 11.8462 17.9966 11.8344C17.9999 11.8234 18 11.8183 18 11.8164C18 11.2641 18.4477 10.8164 19 10.8164C19.5523 10.8164 20 11.2641 20 11.8164C20 12.6658 19.4868 13.3185 18.9179 13.7692C18.3391 14.2279 17.5629 14.5966 16.6917 14.8874C14.9389 15.4726 12.5768 15.8164 10 15.8164C7.42324 15.8164 5.06109 15.4726 3.30833 14.8874C2.43712 14.5966 1.66091 14.2279 1.08206 13.7692C0.513195 13.3185 0 12.6658 0 11.8164C0 11.2641 0.447715 10.8164 1 10.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 3.81641C1.55228 3.81641 2 4.26412 2 4.81641V18.8164C2 18.8183 2.00008 18.8234 2.0034 18.8344C2.00695 18.8462 2.01544 18.8685 2.03558 18.9015C2.07772 18.9707 2.16348 19.0744 2.32419 19.2017C2.65159 19.4611 3.18788 19.7387 3.94167 19.9904C5.43891 20.4902 7.57676 20.8164 10 20.8164C12.4232 20.8164 14.5611 20.4902 16.0583 19.9904C16.8121 19.7387 17.3484 19.4611 17.6758 19.2017C17.8365 19.0744 17.9223 18.9707 17.9644 18.9015C17.9846 18.8685 17.993 18.8462 17.9966 18.8344C17.9999 18.8234 18 18.8183 18 18.8164V4.81641C18 4.26412 18.4477 3.81641 19 3.81641C19.5523 3.81641 20 4.26412 20 4.81641V18.8164C20 19.6658 19.4868 20.3185 18.9179 20.7692C18.3391 21.2279 17.5629 21.5966 16.6917 21.8874C14.9389 22.4726 12.5768 22.8164 10 22.8164C7.42324 22.8164 5.06109 22.4726 3.30833 21.8874C2.43712 21.5966 1.66091 21.2279 1.08206 20.7692C0.513195 20.3185 0 19.6658 0 18.8164V4.81641C0 4.26412 0.447715 3.81641 1 3.81641Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                       Inventory
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">Dashboard</a></li>
+					  <li  class="sub-nav-link"><a href="#">Current Item Stock</a></li>
+					   <li  class="sub-nav-link"><a href="#">Opening Balance</a></li>
+					    <li  class="sub-nav-link"><a href="#">Store Indent</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Requisition</a></li>
+						<li  class="sub-nav-link"><a href="#">Purchase Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Received Note</a></li>
+						<li  class="sub-nav-link"><a href="#">Issue To Clinic</a></li>
+						<li  class="sub-nav-link"><a href="#">Receive against Issue	</a></li>
+						<li  class="sub-nav-link"><a href="#">Return against Receive</a></li>
+						<li  class="sub-nav-link"><a href="#">Material Consumption</a></li>
+						<li  class="sub-nav-link"><a href="#">Suspend Stock Transaction</a></li>
+						<li  class="sub-nav-link"><a href="#">Physical Item Stock</a></li>
+						<li  class="sub-nav-link"><a href="#">Stock Adjustment</a></li>
+						<li  class="sub-nav-link"><a href="#">Item Enquiry</a></li>
+						<li  class="sub-nav-link"><a href="#">Quotation</a></li>
+						<li  class="sub-nav-link"><a href="#">Work Order</a></li>
+						<li  class="sub-nav-link"><a href="#">Issue to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Receive to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Scrap Sale</a></li>
+						<li  class="sub-nav-link"><a href="#">Expired Item Return</a></li>
+						<li  class="sub-nav-link"><a href="#">Issue GRN Item to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Receive GRN Item to QS</a></li>
+						<li  class="sub-nav-link"><a href="#">Goods Return Note</a></li>
+						<li  class="sub-nav-link"><a href="#">MRP Adjustment</a></li>
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                      <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.00042 0.506836C9.26579 0.506719 9.52032 0.612084 9.70797 0.799729L15.3677 6.4595C15.3678 6.45958 15.3677 6.45942 15.3677 6.4595C16.6269 7.7179 17.4848 9.32168 17.8325 11.0676C18.1802 12.8136 18.0024 14.6235 17.3213 16.2683C16.6403 17.9132 15.4868 19.3192 14.0066 20.3084C12.5264 21.2976 10.7861 21.8255 9.00586 21.8255C7.22558 21.8255 5.48529 21.2976 4.00512 20.3084C2.52495 19.3192 1.3714 17.9132 0.690383 16.2683C0.00936806 14.6235 -0.168517 12.8135 0.179228 11.0676C0.526918 9.32185 1.38445 7.71844 2.64339 6.4601C2.64359 6.4599 2.64319 6.4603 2.64339 6.4601L8.29313 0.800355C8.48061 0.612544 8.73505 0.506953 9.00042 0.506836ZM9.00149 2.92167L4.05774 7.87417C3.07831 8.85296 2.41117 10.1002 2.1407 11.4582C1.87023 12.8162 2.00859 14.2239 2.53827 15.5033C3.06795 16.7826 3.96515 17.8761 5.11639 18.6455C6.26764 19.4149 7.6212 19.8255 9.00586 19.8255C10.3905 19.8255 11.7441 19.4149 12.8953 18.6455C14.0466 17.8761 14.9438 16.7826 15.4735 15.5033C16.0031 14.2239 16.1415 12.8162 15.871 11.4582C15.6006 10.1002 14.9334 8.85296 13.954 7.87417L9.00149 2.92167Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Pathology
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Work Order</a></li>
+					  <li  class="sub-nav-link"><a href="#">Work Order List</a></li>
+					   <li  class="sub-nav-link"><a href="#">Sample Collection</a></li>
+					    <li  class="sub-nav-link"><a href="#">Sample Dispatch</a></li>
+						<li  class="sub-nav-link"><a href="#">Sample Status</a></li>
+						<li  class="sub-nav-link"><a href="#">Result Entry</a></li>
+						<li  class="sub-nav-link"><a href="#">Doctor Authorization</a></li>
+						<li  class="sub-nav-link"><a href="#">Upload Report</a></li>
+						<li  class="sub-nav-link"><a href="#">Report Delivery	</a></li>
+						<li  class="sub-nav-link"><a href="#">Outsourcing</a></li>
+						
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                     <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 2.81641C6.02944 2.81641 2 6.84584 2 11.8164C2 16.787 6.02944 20.8164 11 20.8164C15.9706 20.8164 20 16.787 20 11.8164C20 6.84584 15.9706 2.81641 11 2.81641ZM0 11.8164C0 5.74127 4.92487 0.816406 11 0.816406C17.0751 0.816406 22 5.74127 22 11.8164C22 17.8915 17.0751 22.8164 11 22.8164C4.92487 22.8164 0 17.8915 0 11.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 8.81641C9.34315 8.81641 8 10.1596 8 11.8164C8 13.4733 9.34315 14.8164 11 14.8164C12.6569 14.8164 14 13.4733 14 11.8164C14 10.1596 12.6569 8.81641 11 8.81641ZM6 11.8164C6 9.05498 8.23858 6.81641 11 6.81641C13.7614 6.81641 16 9.05498 16 11.8164C16 14.5778 13.7614 16.8164 11 16.8164C8.23858 16.8164 6 14.5778 6 11.8164Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 7.81641C10 7.26412 10.4477 6.81641 11 6.81641H20.17C20.7223 6.81641 21.17 7.26412 21.17 7.81641C21.17 8.36869 20.7223 8.81641 20.17 8.81641H11C10.4477 8.81641 10 8.36869 10 7.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.44891 5.01039C2.92705 4.73399 3.53873 4.89753 3.81513 5.37567L8.40513 13.3157C8.68154 13.7938 8.518 14.4055 8.03986 14.6819C7.56172 14.9583 6.95004 14.7948 6.67364 14.3166L2.08364 6.37662C1.80723 5.89848 1.97077 5.2868 2.44891 5.01039Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.9587 12.9504C15.4371 13.2263 15.6012 13.8378 15.3253 14.3162L10.7453 22.2562C10.4693 22.7346 9.85782 22.8988 9.37941 22.6228C8.90101 22.3468 8.7369 21.7353 9.01285 21.2569L13.5929 13.3169C13.8688 12.8385 14.4803 12.6744 14.9587 12.9504Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Radiology
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Work Order</a></li>
+					  <li  class="sub-nav-link"><a href="#">Work Order List</a></li>
+					   <li  class="sub-nav-link"><a href="#">Result Entry</a></li>
+					    <li  class="sub-nav-link"><a href="#">Upload Report</a></li>
+						<li  class="sub-nav-link"><a href="#">Report Delivery</a></li>
+					
+					</ul>
+                  </li>
+				    <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                    <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 22 21" style="enable-background:new 0 0 22 21;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#838383;}
+</style>
+<path class="st0" d="M14,20.8c-0.4,0-0.8-0.3-0.9-0.7L8,5l-2.1,6.2c-0.1,0.4-0.5,0.7-0.9,0.7H1c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1
+	h3.3l2.8-8.3C7.2,1.1,7.6,0.8,8,0.8s0.8,0.3,0.9,0.7L14,16.7l2.1-6.2c0.1-0.4,0.5-0.7,0.9-0.7h4c0.6,0,1,0.4,1,1c0,0.6-0.4,1-1,1
+	h-3.3l-2.8,8.3C14.8,20.5,14.4,20.8,14,20.8z"/>
+</svg>
+
+                        </div>
+                       OT
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">OT Schedule</a></li>
+					  <li  class="sub-nav-link"><a href="#">OT Details</a></li>
+					  
+					</ul>
+                  </li>
+				   <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                   <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.46447 14.2809C2.40215 13.3432 3.67392 12.8164 5 12.8164H13C14.3261 12.8164 15.5979 13.3432 16.5355 14.2809C17.4732 15.2186 18 16.4903 18 17.8164V19.8164C18 20.3687 17.5523 20.8164 17 20.8164C16.4477 20.8164 16 20.3687 16 19.8164V17.8164C16 17.0208 15.6839 16.2577 15.1213 15.6951C14.5587 15.1325 13.7956 14.8164 13 14.8164H5C4.20435 14.8164 3.44129 15.1325 2.87868 15.6951C2.31607 16.2577 2 17.0208 2 17.8164V19.8164C2 20.3687 1.55228 20.8164 1 20.8164C0.447715 20.8164 0 20.3687 0 19.8164V17.8164C0 16.4903 0.526784 15.2186 1.46447 14.2809Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9 2.81641C7.34315 2.81641 6 4.15955 6 5.81641C6 7.47326 7.34315 8.81641 9 8.81641C10.6569 8.81641 12 7.47326 12 5.81641C12 4.15955 10.6569 2.81641 9 2.81641ZM4 5.81641C4 3.05498 6.23858 0.816406 9 0.816406C11.7614 0.816406 14 3.05498 14 5.81641C14 8.57783 11.7614 10.8164 9 10.8164C6.23858 10.8164 4 8.57783 4 5.81641Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.032 13.6965C19.1701 13.1618 19.7155 12.8402 20.2502 12.9783C21.3229 13.2552 22.2732 13.8806 22.9519 14.7562C23.6307 15.6318 23.9994 16.7079 24.0002 17.8158L24.0002 19.8165C24.0002 20.3688 23.5525 20.8165 23.0002 20.8165C22.448 20.8165 22.0002 20.3688 22.0002 19.8165L22.0002 17.8173C22.0002 17.8172 22.0002 17.8174 22.0002 17.8173C21.9997 17.1527 21.7784 16.5068 21.3713 15.9815C20.964 15.4562 20.3938 15.081 19.7502 14.9148C19.2155 14.7767 18.8939 14.2313 19.032 13.6965Z" fill="#838383"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0315 1.69849C15.1685 1.16346 15.7133 0.840792 16.2483 0.97778C17.3238 1.25316 18.2771 1.87866 18.9578 2.75567C19.6386 3.63268 20.0081 4.71132 20.0081 5.82153C20.0081 6.93174 19.6386 8.01038 18.9578 8.88739C18.2771 9.7644 17.3238 10.3899 16.2483 10.6653C15.7133 10.8023 15.1685 10.4796 15.0315 9.94457C14.8945 9.40954 15.2172 8.86477 15.7522 8.72778C16.3975 8.56255 16.9695 8.18725 17.3779 7.66105C17.7864 7.13484 18.0081 6.48766 18.0081 5.82153C18.0081 5.1554 17.7864 4.50822 17.3779 3.98201C16.9695 3.45581 16.3975 3.08051 15.7522 2.91528C15.2172 2.77829 14.8945 2.23352 15.0315 1.69849Z" fill="#838383"/>
+</svg>
+
+
+                        </div>
+                       IPD
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">New Admission</a></li>
+					  <li  class="sub-nav-link"><a href="#">Admission List</a></li>
+					  <li  class="sub-nav-link"><a href="#">Bed Change</a></li>
+					  <li  class="sub-nav-link"><a href="#">Graphical View</a></li>
+					  <li  class="sub-nav-link"><a href="#">Discharge Summary</a></li>
+					  <li  class="sub-nav-link"><a href="#">Discharge</a></li>
+					  <li  class="sub-nav-link"><a href="#">IPD Invoice List</a></li>
+					  <li  class="sub-nav-link"><a href="#">IPD Refund Services</a></li>
+					  
+					</ul>
+                  </li>
+				  <li class="nav-item ">
+                     <a href="#" class="nav-link  d-flex align-items-center">
+                        <div class="nav-list-img">
+                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.50214 1.21709C8.95768 0.954591 9.47421 0.816406 10 0.816406C10.5258 0.816406 11.0424 0.954602 11.4979 1.21713C11.4986 1.21753 11.4993 1.21793 11.5 1.21833L18.5 5.21832C18.9556 5.48137 19.334 5.8596 19.5973 6.31507C19.8606 6.77055 19.9995 7.28724 20 7.81333V15.8154C19.9995 16.3415 19.8606 16.8582 19.5973 17.3136C19.334 17.7691 18.9556 18.1473 18.5 18.4104L18.4961 18.4126L11.5 22.4104C11.4994 22.4107 11.4988 22.4111 11.4982 22.4114C11.0426 22.674 10.5259 22.8123 10 22.8123C9.4741 22.8123 8.95745 22.6741 8.50185 22.4114C8.50123 22.4111 8.50062 22.4107 8.5 22.4104L1.50386 18.4126L1.5 18.4104C1.04439 18.1473 0.66597 17.7691 0.402692 17.3136C0.139414 16.8582 0.000539601 16.3415 0 15.8154V7.81333C0.000539601 7.28724 0.139414 6.77054 0.402692 6.31507C0.66597 5.8596 1.04439 5.48137 1.5 5.21833L1.50386 5.2161L8.50214 1.21709ZM10 2.81641C9.82446 2.81641 9.65202 2.86261 9.5 2.95038L9.49614 2.95261L2.5 6.95038C2.49947 6.95068 2.49895 6.95099 2.49842 6.95129C2.34726 7.03894 2.22169 7.16466 2.13423 7.31596C2.04654 7.46766 2.00025 7.63974 2 7.81495V15.8138C2.00025 15.989 2.04654 16.161 2.13423 16.3127C2.22169 16.464 2.34726 16.5898 2.49842 16.6774C2.49895 16.6777 2.49947 16.678 2.5 16.6783L9.5 20.6783C9.65202 20.7661 9.82446 20.8123 10 20.8123C10.1755 20.8123 10.348 20.7661 10.5 20.6783L10.5039 20.6761L17.5 16.6783C17.5005 16.678 17.5011 16.6777 17.5016 16.6774C17.6527 16.5898 17.7783 16.464 17.8658 16.3127C17.9535 16.1609 17.9998 15.9887 18 15.8133V7.81538C17.9998 7.64002 17.9535 7.46779 17.8658 7.31596C17.7783 7.16467 17.6527 7.03894 17.5016 6.9513C17.5011 6.95099 17.5005 6.95069 17.5 6.95038L10.5 2.95039C10.348 2.86262 10.1755 2.81641 10 2.81641Z" fill="#838383"/>
+</svg>
+
+                        </div>
+                       Configurations
+						<div class="right-arrow">
+							<i class="fa fa-angle-down"></i>
+						</div>
+                     </a>
+					 <ul class="submenu">
+					  <li class="sub-nav-link"><a href="#">User</a></li>
+					  <li  class="sub-nav-link"><a href="#">Clinic</a></li>
+					  <li  class="sub-nav-link"><a href="#">Application</a></li>
+					  <li  class="sub-nav-link"><a href="#">Patient</a></li>
+					  <li  class="sub-nav-link"><a href="#">Billing</a></li>
+					  <li  class="sub-nav-link"><a href="#">Package</a></li>
+					  <li  class="sub-nav-link"><a href="#">Inventory</a></li>
+					  <li  class="sub-nav-link"><a href="#">Pathology</a></li>
+					   <li  class="sub-nav-link"><a href="#">Radiology</a></li>
+					    <li  class="sub-nav-link"><a href="#">OT</a></li>
+						 <li  class="sub-nav-link"><a href="#">IPD</a></li>
+					</ul>
+                  </li>
+               </ul>
+			
+			  
+            </div>
+         </nav>
+         <div class="main-page-container">
+			<div class="nav-header-main">
+            <div class="nav-header d-flex justify-content-between ">
+              <div class="header-text">
+				<h1>Good morning, <span>Jennifer!</span></h1>
+				<div class="h-date">Wednesday, 06 SEPT 2021 </div>
+			  </div>
+               <ul class="nav d-flex align-items-center">
+                 <li class="nav-search">
+					 <div class="form-group has-search">
+						<span class="form-control-feedback">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.0004 19.0004L14.6504 14.6504" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+						</span>
+						<input type="text" class="form-control" placeholder="Search Patients/MR No./Mobile Number">
+					  </div>
+				 </li>
+                  <li class="header-nav-list drop-down global-header-menu__list-item--with-dropdown">
+                     <a href="#" class="nav-list-item">
+                        <svg width="27" height="35" viewBox="0 0 27 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M21.8333 14.4015C21.8333 12.1733 20.9554 10.0363 19.3926 8.46074C17.8298 6.88515 15.7101 6 13.5 6C11.2899 6 9.17025 6.88515 7.60744 8.46074C6.04464 10.0363 5.16667 12.1733 5.16667 14.4015C5.16667 24.2032 1 27.0037 1 27.0037H26C26 27.0037 21.8333 24.2032 21.8333 14.4015Z" stroke="#939393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M15.9022 32.6045C15.6581 33.0289 15.3076 33.3811 14.8859 33.626C14.4642 33.8709 13.9861 33.9998 13.4995 33.9998C13.0128 33.9998 12.5347 33.8709 12.113 33.626C11.6913 33.3811 11.3409 33.0289 11.0967 32.6045" stroke="#939393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						
+						</svg>
+
+                        <span class="badge-pulse"></span>
+                     </a>
+                     <div class="global-header-menu__dropdown-container">
+                        <div class="global-header-dropdown">
+                           <ul class="global-header-dropdown__list">
+                              <li><a href="#">Messages <span class="label">4</span></a></li>
+                              <li><a href="#">Badges <span class="label">2</span></a></li>
+                              <li><a href="#">Tasks<span class="label">1</span></a></li>
+                              <li><a href="#">Calendar<span class="label">2</span></a></li>
+                           </ul>
+                           <div class="global-header-dropdown-footer">
+                              <span>9 new notifications</span>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="header-nav-list user d-flex align-items-center">
+                     
+                     <div class="dropdown">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/user.png" class="user-pic"><span class="user-name"> Jennifer</span></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#">My Account</a></li>
+                           <li><a href="#">Contact Support</a></li>
+                           <li><a href="#">Logout</a></li>
+                        </ul>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+			<div class="header-bottom d-flex align-items-center justify-content-between">
+				<div class="header-b-left"  id="tile-1">
+					<ul class="  sort-list d-flex align-items-center">
+						<div class="tab-slider"></div>
+						<li class="nav-item active"><a href="#" class="">Today</a></li>
+						<li><a href="#" class=" ">Tomorrow</a></li>
+						<li><a href="#" class="">This Week</a></li>
+						<li><a href="#" class=" ">This Month</a></li>
+						
+					</ul>
+					
+				</div>
+				<div class="header-b-right">
+					<div class="header-btn d-flex align-items-center">
+						<button class="print-btn btn-purple d-flex align-items-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 9V2H18V9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M6 18H4C3.46957 18 2.96086 17.7893 2.58579 17.4142C2.21071 17.0391 2 16.5304 2 16V11C2 10.4696 2.21071 9.96086 2.58579 9.58579C2.96086 9.21071 3.46957 9 4 9H20C20.5304 9 21.0391 9.21071 21.4142 9.58579C21.7893 9.96086 22 10.4696 22 11V16C22 16.5304 21.7893 17.0391 21.4142 17.4142C21.0391 17.7893 20.5304 18 20 18H18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M18 14H6V22H18V14Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+Print</button>
+						<button class="btn-all btn-blue d-flex align-items-center "><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.5 19.5C15.9183 19.5 19.5 15.9183 19.5 11.5C19.5 7.08172 15.9183 3.5 11.5 3.5C7.08172 3.5 3.5 7.08172 3.5 11.5C3.5 15.9183 7.08172 19.5 11.5 19.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.4999 21.5004L17.1499 17.1504" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+Advance Search</button>
+<button class="btn-all-border btn-pink d-flex align-items-center "><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.5 5.5V19.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.5 12.5H19.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+Add Walk-in</button>
+
+					</div>
+				</div>
+			</div>
+			</div>
+            <div class="section section-main-container">
+               <div class="custom-container">
+			    <div class="row">
+					 <div class="col-md-8 section-left">
+						<div class="table-main-container">
+							<div class="table-container">
+								 <table class="table">
+									<thead>
+									  <tr>
+										<th>From Time</th>
+										<th>MR No.</th>
+										<th>Patient Name</th>
+										<th>Doctor</th>
+										<th>Actions</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr>
+										<td>10:05 am</td>
+										<td>NDAM/65966/P/2019</td>
+										<td>Jenny Wilson</td>
+										<td>Esther Howard</td>
+										<td>
+											<div class="action-btn-main d-flex align-items-center">
+												<button class="action-btn info-btn" data-toggle="modal" data-target="#appoint">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 16V12" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8H12.01" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+												<button class="action-btn check-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4545 8L8.95455 14.5L6 11.5455" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn clock-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 5V11L15 13" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn close-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 8L8 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 8L14 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+											</div>
+										</td>
+									  </tr>
+									 <tr>
+										<td>07:38 am</td>
+										<td>GEM/12638/H/2019</td>
+										<td>Ronald Richards</td>
+										<td>Guy Hawkins</td>
+										<td>
+											<div class="action-btn-main d-flex align-items-center">
+												<button class="action-btn info-btn">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 16V12" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8H12.01" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+												<button class="action-btn check-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4545 8L8.95455 14.5L6 11.5455" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn clock-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 5V11L15 13" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn close-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 8L8 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 8L14 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+											</div>
+										</td>
+									  </tr>
+									  <tr>
+										<td>01:34 pm</td>
+										<td>PERL/65937/O/2014</td>
+										<td>Wade Warren</td>
+										<td>Darrell Steward</td>
+										<td>
+											<div class="action-btn-main d-flex align-items-center">
+												<button class="action-btn info-btn">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 16V12" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8H12.01" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+												<button class="action-btn check-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4545 8L8.95455 14.5L6 11.5455" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn clock-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 5V11L15 13" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn close-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 8L8 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 8L14 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+											</div>
+										</td>
+									  </tr>
+									   <tr>
+										<td>01:09 am</td>
+										<td>RUBY/43856/Q/2017</td>
+										<td>Jane Cooper</td>
+										<td>Dianne Russell</td>
+										<td>
+											<div class="action-btn-main d-flex align-items-center">
+												<button class="action-btn info-btn">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 16V12" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8H12.01" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+												<button class="action-btn check-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4545 8L8.95455 14.5L6 11.5455" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn clock-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 5V11L15 13" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn close-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 8L8 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 8L14 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+											</div>
+										</td>
+									  </tr>
+									  <tr>
+										<td>03:48 am</td>
+										<td>GEM/64820/M/2021</td>
+										<td>Devon Lane</td>
+										<td>Albert Flores</td>
+										<td>
+											<div class="action-btn-main d-flex align-items-center">
+												<button class="action-btn info-btn">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 16V12" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8H12.01" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+												<button class="action-btn check-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4545 8L8.95455 14.5L6 11.5455" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn clock-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 5V11L15 13" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn close-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 8L8 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 8L14 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+											</div>
+										</td>
+									  </tr>
+									  <tr>
+										<td>06:32 pm</td>
+										<td>GEM/74733/P/2017</td>
+										<td>Devon Lane</td>
+										<td>Albert Flores</td>
+										<td>
+											<div class="action-btn-main d-flex align-items-center">
+												<button class="action-btn info-btn">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 16V12" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8H12.01" stroke="#7B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+												<button class="action-btn check-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4545 8L8.95455 14.5L6 11.5455" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#28FF4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn clock-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 5V11L15 13" stroke="#08C3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+												</button>
+												<button class="action-btn close-btn">
+													<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 8L8 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 8L14 14" stroke="#FF7438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+												</button>
+											</div>
+										</td>
+									  </tr>
+									   
+									</tbody>
+								  </table>
+								 <div class="pagination-main d-flex align-items-center">
+									 <ul class="pagination">
+										  <li class="page-item disabled "><a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a></li>
+										  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+										  <li class="page-item"><a class="page-link" href="#">2</a></li>
+										  <li class="page-item"><a class="page-link" href="#">3</a></li>
+										  <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a></li>
+									</ul>
+									<div class="page-num">
+										Showing <span>9</span> of <span>200</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					 </div>
+					 <div class="col-md-4 section-right">
+						<div class="section-right-content ">
+							<div class="sec-heading-small">
+								<h3>Select Doctor</h3>
+							</div>
+							<div class="selected-date mb-2 date-box d-flex align-items-center justify-content-between">
+								<div class="s-date d-flex align-items-center"><svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.9091 3.54492H4.36364C3.05824 3.54492 2 4.60316 2 5.90856V22.454C2 23.7594 3.05824 24.8176 4.36364 24.8176H20.9091C22.2145 24.8176 23.2727 23.7594 23.2727 22.454V5.90856C23.2727 4.60316 22.2145 3.54492 20.9091 3.54492Z" stroke="#FF7438" stroke-width="2.36364" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.3635 1.18164V5.90891" stroke="#FF7438" stroke-width="2.36364" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.90918 1.18164V5.90891" stroke="#FF7438" stroke-width="2.36364" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 10.6357H23.2727" stroke="#FF7438" stroke-width="2.36364" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+18th December, 2021
+							</div>
+							<div class="s-time">12:30pm</div>
+							</div>
+							<div class="docter-list-main">
+								
+								<div class="dr-list-inner dr-scroll-list">
+									<ul class="dr-list ">
+										<li class="mb-3">
+											<div class="dr-img">
+												<img src="images/dr1.png" alt="image" class="img-fluid"/>
+											</div>
+											<div class="dr-des">
+												<h4 class="mb-1">Dr. Charlotte Rose</h4>
+												<p>Embryologist</p>
+												<span >Multiply</span>
+											</div>
+										</li>
+										<li class="flex-column mb-3">
+											<div class="p-des w-100 d-flex align-items-center mb-3">
+												<div class="dr-img">
+											<img src="images/p1.png" alt="image" class="img-fluid"/>
+												</div>
+												<div class="dr-des">
+													<h4 class="mb-1">Jenny Wilson</h4>
+													<p>634512</p>
+													<p class="ph">(217) 555-0113</p>
+												</div>
+											</div>
+											<div class="p-des w-100 d-flex align-items-center">
+												<div class="dr-img">
+													<img src="images/p2.png" alt="image" class="img-fluid"/>
+												</div>
+												<div class="dr-des">
+													<h4 class="mb-1">Brooklyn Simmons</h4>
+														<p>634812</p>
+														<p class="ph">(217) 555-9875</p>
+												</div>
+											</div>
+										</li>
+										
+									</ul>
+									<div class="list-option">
+										<form action="#" class="p-form">
+										
+										<div class="form-input list-form mb-2">
+											<div class="form-select">
+												 <select id="sources" name="service">
+												  <option value="hide">Reason</option>
+												  <option value="reason1" >reason1</option>
+												  <option value="reason2">reason2</option>
+												 
+											   </select>
+											</div>
+										</div>
+										
+										 <div class="form-input-main">
+                                    <div class="form-input  list-form mb-3">
+										<input type="text" class="f-input " placeholder=""/>
+										<label class="form-label">Remarks (if any)</label>
+									</div>
+                                 </div>
+									</form>
+									</div>
+								
+								<button class="btn-all btn-orange mx-auto d-flex align-items-center ">Confirm</button>
+								</div>
+								
+							</div>
+						</div>
+					 </div>
+				</div> 
+               </div>
+            </div>
+         </div>
+      </div>	 
+      <!-- Bootstrap Js File -->
+       <!-- Javascript -->
+      <script  src="assets/js/jquery.min.js"></script>
+      <script  src="assets/js/Popper.js"></script>
+      <script  src="assets/js/bootstrap.min.js"></script>
+      <script  src="assets/js/jquery.easing.min.js"></script>
+      <script  src="assets/js/main.js"></script>
+	   <script  src="assets/js/select.js"></script>
+      <!-- Appear js -->
+      <script src="assets/js/appear.min.js"></script>
+   </body>
+</html>

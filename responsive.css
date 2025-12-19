@@ -1,0 +1,1311 @@
+@media(max-width:1650px) {
+	.vertical-nav {
+		width: 200px;
+	}
+	.nav-list-img {
+		width: 30px;
+	}
+	.nav-list>li>a svg {
+		margin-right: 15px;
+		width: 18px;
+		height: 18px;
+	}
+	.nav-list {
+		margin-bottom: 20px;
+		height:calc(100vh - 140px);
+	}
+	.nav-list>li{
+		margin:0px 5px 10px;
+	}
+	.submenu li a {
+    font-weight: 500;
+    font-size: 15px;
+	}
+	.d-b-inner {
+    width: 200px;
+    height: 200px;
+	padding:30px;
+	}
+	.d-box svg{
+		    width: 60px;
+	}
+	.d-b-inner h5 {
+
+    font-size: 16px;
+}
+	.nav-list>li,
+	.nav-list>li>a {
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.sidenav-logo {
+		padding-bottom: 30px;
+	}
+	.main-page-container {
+		width: calc(100% - 240px);
+		height: calc(100vh - 35px)
+	}
+	.header-text h1 {
+		font-size: 32px;
+	}
+	.has-search .form-control {
+		width: 520px;
+	}
+	.has-search {
+		margin-right: 30px;
+	}
+	.header-text .h-date {
+		font-size: 18px;
+	}
+	.user .user-name {
+		font-size: 20px;
+	}
+	.sort-list li a {
+		padding: 5px 10px;
+		font-size: 13px;
+	}
+	#tile-1 .tab-slider {
+		width: 60px;
+		height: 48px;
+	}
+	.btn-all,
+	.btn-all-border,
+	.print-btn {
+		width: auto;
+		height: 45px;
+		font-size: 14px;
+		padding: 10px 10px;
+		min-width:150px;
+	}
+	.btn-all svg,
+	.btn-all-border svg {
+		margin-right: 10px;
+		width: 20px;
+	}
+	.print-btn svg {
+		margin-right: 10px;
+		width: 20px;
+	}
+	
+	.btn-all-border {
+		width: auto!important;
+		min-width: 180px;
+	}
+	.table-container .table td,
+	.table-container .table th {
+		padding: 15px 20px;
+	}
+	.table-container .table td {
+		font-size: 14px;
+	}
+	.action-btn-main:before {
+		height: 45px;
+	}
+	.sec-heading h2 {
+		font-size: 18px;
+	}
+	.select-styled,
+	.select {
+		height: 75px;
+		font-size: 14px;
+	}
+	
+	.form-input-textarea textarea{
+		padding:15px 20px;
+		font-size:14px;
+		border-radius:10px;
+	}
+	.action-btn {
+		margin: 0px 3px;
+	}
+	.table-container .table tbody tr td:nth-child(1) {
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+	}
+	.table-container .table tbody tr td:last-child {
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+	.sidenav-logo svg {
+		width: 45px;
+		height: 45px;
+	}
+	.sidenav-logo {
+		padding-bottom: 15px;
+		padding-left: 20px;
+	}
+	.vertical-nav {
+		padding: 15px 0;
+	}
+	.table-container .table td,
+	.table-container .table th {
+		padding: 10px 20px;
+		font-size: 12px;
+	}
+	.form-input input {
+    height: 60px;
+    border-radius: 15px;
+    padding: 25px 20px 10px;
+    font-size: 14px;
+}
+	.section-right-content {
+		margin-top: 20px;
+	}
+	.header-bottom {
+		margin-top: 20px;
+		margin-bottom:10px;
+	}
+	.baby-info .form-input-search input{
+		height:100%;
+	}
+	.form-input-search .input-addon{
+		height:inherit;
+	}
+	.bill-btn,
+	.emr-btn {
+		width: 50px;
+		height: 25px;
+		font-size: 13px;
+	}
+	.print-form-main .form-input {
+		margin-bottom: 15px;
+	}
+	.form-input .input-group-addon img {
+		width: 20px;
+	}
+	
+	
+	.date-box {
+		padding: 15px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		height: 45px;
+	}
+	.selected-date {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.dr-list li {
+		border-radius: 20px;
+		background: #fff;
+		padding: 15px 15px;
+		margin-bottom: 10px;
+	}
+	.dr-img {
+		width: 50px;
+		height: 50px;
+		margin-right: 20px;
+	}
+	.dr-des h4 {
+		font-size: 16px;
+		line-height: 18px;
+	}
+	.dr-des p {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.dr-des span {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.dr-search .has-search .form-control {
+		padding: 10px 30px 10px 60px;
+		height: 45px;
+		border-radius: 15px;
+		font-size: 15px;
+	}
+	.dr-search .has-search .form-control-feedback {
+		left: 10px;
+	}
+	.section {
+		padding: 10px 0;
+	}
+	.list-form .select-styled {
+		height: 65px;
+		font-size: 15px;
+		padding: 15px 25px;
+		border-radius: 15px;
+	}
+	.list-form .select-styled{
+		
+	}
+	.dr-scroll-list {
+    max-height: 380px;
+    padding-bottom: 10px;
+}
+	.dr-search {
+		margin-bottom: 10px;
+	}
+	.dr-des {
+		width: calc(100% - 70px);
+	}
+	.view {
+		font-size: 14px;
+		line-height: 15px;
+	}
+	.page-num,
+	.pagination-main .page-link {
+		font-size: 15px;
+	}
+	.popup-head {
+		margin-bottom: 25px;
+		padding: 0!important;
+	}
+	.title-text {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	.appoint-text {
+		font-size: 16px;
+	}
+	.detail-card {
+		padding: 10px 25px;
+		height: 80px;
+	}
+	.modal-footer {
+		margin-top: 30px;
+	}
+	.popup-form .form-input input {
+		padding: 15px 20px;
+		font-size: 16px;
+		height: 45px;
+	}
+	/*
+	.popup-form .form-input .select-styled {
+		height: 45px;
+		font-size: 16px;
+		border-radius: 10px;
+		padding: 15px 20px;
+	}
+	.popup-form .form-input .select {
+		height: 45px;
+	}*/
+	
+	.reschedule-appoint-right .dr-list li {
+		padding: 12px;
+	}
+	.reschedule-appoint-btn .btn-orange {
+		min-width: auto!important;
+		width: auto;
+	}
+	.back,
+	.back:hover {
+		font-size: 16px;
+	}
+	.bill-heading {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	.bill-card {
+		border-radius: 10px;
+		padding: 10px 20px;
+	}
+	.bill-left-card {
+		margin-bottom: 15px;
+	}
+	.bill-summary-top span {
+		margin-bottom: 5px;
+	}
+	.bill-total {
+		font-size: 28px;
+		line-height: 30px;
+	}
+	.bill-list li {
+		margin-bottom: 10px;
+		line-height: initial;
+	}
+	.bill-left {
+		height: 650px;
+	}
+	.bill-bottom {
+		padding: 20px 15px;
+		margin: 20px 0;
+	}
+	.checkbox label {
+		font-size: 15px;
+	}
+	.bill-list li label {
+		margin-bottom: 0;
+	}
+	.bill-summary-main {
+		width: 400px;
+		margin: auto;
+	}
+	.bill-summary-box {
+		width: 400px;
+	}
+	.bill-box-btn {
+		margin-top: 30px!important;
+	}
+	.pay-method-list li a {
+		padding: 10px 20px;
+		height: 50px;
+	}
+	.pay-method-list li a {
+		border-radius: 10px;
+		padding: 10px 20px;
+		height: 50px;
+		font-size: 15px;
+	}
+	.head-info {
+    font-size: 14px;
+    padding: 20px 20px;
+	}
+	
+	.header-link {
+    height: 45px;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+	.header-link svg {
+    margin-right: 5px;
+    width: 15px;
+}
+.login-container {
+	padding: 30px 180px 0;
+}
+.login-box {
+	padding: 25px;
+}
+.login-logo img {
+    max-width: 200px;
+}
+.login-form-input {
+    border-radius: 15px;
+	height: 80px;
+}
+.login-form-input label {
+    top: 30px;
+    font-size: 16px;
+    line-height: inherit;
+}
+.login-head {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.btn-login {
+    height: 45px;
+	margin-bottom: 20px;
+}
+.login-bottom {
+	padding: 30px 0 30px;
+}
+.b-link, .b-link:hover,.separator-and,.copyright {
+	font-size: 16px;
+}
+.login-logo {
+    margin-bottom: 30px;
+}
+.login-form-input input {
+    font-size: 16px;
+line-height: 20px;
+padding:10px 20px;
+}
+.login-form-input.active label {
+    top: 6px;
+}
+.login-inner{
+	    height: 100%;
+}
+.input-addon {
+	height: 40px;
+}
+.bg-gray-select .select-styled {
+    border-radius: 20px;
+}
+.select-styled {
+    border-radius: 20px;
+}
+.avatar-preview img{
+	    max-width: 100px;
+}
+.header-bottom.baby-info.row{
+	    margin-left: 0;
+    margin-right: 0;
+}
+.print-btn-main {
+		margin-top:20px;
+	}
+	.d-box a h5 {
+    font-size: 20px;
+	}
+	.invoice-heading {
+    font-size: 20px;
+	margin-bottom:15px;
+	}
+	.serv-head {
+    font-size: 15px;
+	margin-bottom: 10px
+	}
+	.pay-box span {
+    font-size: 14px;
+    margin-bottom: 10px;
+	}
+	.pay-box h4 {
+		font-size: 20px;
+	}
+	.pay-box {
+    height: 75px;
+	padding:10px 15px;
+	}
+	.payment-left {
+    height: calc(100vh - 300px);
+	overflow-x:hidden;
+}
+/*.section-right.col-md-4{
+	    -webkit-box-flex: 0;
+    -ms-flex: 0 0 28%;
+    flex: 0 0 28%;
+    max-width: 28%;
+}*/
+.pay-search .has-search .form-control {
+	font-size: 12px;
+}
+.payment-option-list li {
+	padding: 15px;
+}
+.payment-option-list li h4 {
+	font-size: 12px;
+}
+.payment-form-list {
+    max-height: 250px;
+}
+.pay-icon{
+	display: flex;
+}
+.pay-icon svg{
+	    width: 20px;
+height:20px;		
+}
+.serv-head span {
+	font-size: 18px;
+}
+.invoice-form-input input, .invoice-form-input input:focus {
+	height: 55px;
+}
+.w-97 {
+    width: 90px;
+}
+.w-68 {
+    width: 65px;
+}	
+.in-input input {
+    width: 140px;
+}
+.invoice-select .select {
+    width: 195px;
+}
+.table-container.invoice-table .table td {
+    padding: 4px 12px;
+    text-align: center;
+}
+.amt-list li h4 {
+	font-size: 20px;
+}
+.amt-list li span {
+	font-size: 14px;
+}
+.w-260 {
+    width: 230px;
+}
+.amt-list li {
+    margin-right: 25px;
+}
+
+}
+
+@media(max-width:1440px) {
+	.main-page-container {
+		width: calc(100% - 220px);
+		height: calc(100vh - 35px)
+	}
+	.payment-bottom label {
+		font-size: 15px;
+	}
+	.search-baby{
+		height: 65px!important;
+	}
+	.w-150 .select {
+    width: 145px;
+}
+	.form-input {
+		height: 65px;
+	}
+	.form-input label {
+		top: 22px;
+	}
+	.select-styled, .select {
+    height: 65px;
+}
+	.table-container .table td,
+	.table-container .table th {
+		padding: 14px 15px;
+	}
+	.header-text h1 {
+		font-size: 28px;
+	}
+	.has-search .form-control {
+		width: 450px;
+	}
+	.has-search {
+		margin-right: 15px;
+	}
+	.sort-list li a {
+		padding: 10px 20px;
+		font-size: 14px;
+	}
+	.header-btn button, .header-btn a {
+    margin-left: 10px;
+}
+	#tile-1 .tab-slider {
+		width: 90px;
+	}
+	.btn-all {
+		width: auto;
+		font-size: 15px;
+	}
+	.print-btn {
+		width: auto;
+		padding: 0px 15px;
+		font-size: 15px;
+		line-height: 22px;
+	}
+	.table-container .table td {
+		font-size: 12px;
+	}
+	.page-container {
+		padding: 20px 20px;
+	}
+	.table-container .table tbody tr td:nth-child(1) {
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+	.table-container .table tbody tr td:last-child {
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	.nav-list>li,
+	.nav-list>li>a {
+		font-size: 15px;
+		line-height: 22px;
+	}
+	.login-img img {
+    width: 100%;
+}
+.login-box {
+    padding: 20px;
+	 width: 480px;
+}
+.login-form-input input {
+	height: 40px;
+	font-size: 15px;
+}
+.login-form-input {
+    height: 65px;
+}
+.login-form-input label {
+    top: 22px;
+	font-size: 15px;
+}
+.login-logo img {
+    max-width: 180px;
+}
+.forget-psw {
+    font-weight: bold;
+    font-size: 14px;
+	line-height: 15px;
+}
+.btn-login {
+    height: 45px;
+    margin-bottom: 20px;
+}
+.login-form-input .input-addon {
+	top: 3px;
+}
+
+
+.form p {
+	font-size: 12px;
+}
+
+.f-box {
+    padding: 30px;
+}
+.f-box .col-md-1 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 12%;
+    flex: 0 0 12%;
+    max-width: 12%;
+}
+.f-box  .col-md-11 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 88%;
+    flex: 0 0 88%;
+    max-width: 88%;
+	    padding: 0;
+}
+
+.header-btn button {
+    margin-left: 10px;
+}
+.btn-pink{
+	padding-right:20px!important;
+}
+.input-addon {
+	height: 45px;
+}
+.head-info {
+    padding: 15px 20px;
+}
+.header-link {
+    height: 45px;
+    font-size: 14px;
+    padding: 10px 12px;
+}
+.baby-info.row{
+	    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.add-method {
+	font-size: 16px;
+}
+
+.select-styled.active:after {
+    transform: rotate(
+180deg);
+    top: 45px!important;
+    right: 15px!important;
+}
+
+.action-btn svg {
+    width: 15px;
+}
+.page-num ,.pagination-main .page-link{
+    font-size: 12px;
+}
+.select-options li {
+    padding: 8px 20px;
+    font-size: 12px;
+	font-weight: 500;
+}
+.print-form-main .form-input {
+    margin-bottom: 12px;
+}
+	.has-search .form-control {
+		width: 330px;
+		height:40px;
+		    font-size: 13px;
+	}
+	.appoint-cal-main{
+		width:auto;
+	}
+	.today.active.day{
+		box-shadow:none;
+	}
+	.w-90 {
+    width: 87%;
+}
+.form-input label {
+	font-size: 14px;
+}
+.px-4.w-90{
+	padding-left:30px!important;
+	padding-right:30px!important;
+}
+.select-styled:after {
+	top: 22px;
+}
+.d-box a h5 {
+    font-size: 14px;
+	line-height:18px;
+	}
+	.pay-box h4 {
+    font-size: 18px;
+}
+.invoice-heading {
+	font-size: 18px;
+}
+.dr-des p {
+    font-size: 13px;
+    line-height: 20px;
+}
+.payment-option-list li {
+	margin-right: 10px;
+}
+.payment-form-list {
+    max-height: 340px;
+}
+.payment-button button{
+	width:50%!important;
+	
+}
+.payment-button .btn-pink{
+	padding-right:10px!important;
+}
+.w-200 {
+    width: 180px;
+}
+.serv-content .select-styled{
+	padding:15px;
+}
+.serv-content .select-styled, .serv-content .select {
+    height: 48px;
+    font-size: 12px;
+}
+.input-add {
+    right: 12px;
+	top: 15px;
+}
+/*
+.invoice-select .select-styled, .invoice-select .select {
+    height: 48px;
+    font-size: 12px;
+}*/
+.invoice-bottom-row {
+	width: calc(100% - 300px);
+}
+.w-260 {
+    width: auto;
+}
+.invoice-bottom-row .select-styled {
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 12px;
+}
+.invoice-bottom-row .form-input input {
+    border-radius: 15px;
+    padding: 8px 15px;
+    font-size: 12px;
+}
+.amt-list li {
+    margin-right: 20px;
+}
+.btn-all, .btn-all-border, .print-btn {
+    font-size: 14px;
+    padding: 10px 10px;
+    min-width: 150px;
+}
+	.print-content{
+	    height: 70vh;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+span.badge-pulse {
+    right: 20px;
+	top: 16px;
+}
+.invoice-table .form-input input{
+	padding:20px;
+}
+.header-nav-list svg{
+	    width: 20px;
+    height: 30px;
+}
+.span.badge-pulse{
+	right:20px;
+}
+.page-num {
+    font-size: 13px;
+}
+.pagination-main .page-link {
+    font-size: 13px;
+}
+.date-pick {
+    padding: 10px;
+}
+.date-pick .datepicker td, .date-pick .datepicker th{
+	margin:0px 5px!important;
+}
+
+}
+
+@media(max-width:1366px) {
+	.dr-list li{
+		padding:15px!important;
+	}
+	.in-input input {
+    width: 125px;
+}
+.invoice-select .select {
+    width: 170px;
+}
+.amt-list li span {
+    font-size: 12px;
+}
+.invoice-bottom-row {
+    width: calc(100% - 260px);
+}
+.amt-list li h4 {
+    font-size: 18px;
+}
+	.main-page-container {
+    width: calc(100% - 220px);
+    height: calc(100vh - 35px);
+}
+.serv-head span {
+    font-size: 14px;
+}
+	.dr-scroll-list {
+    max-height: 350px;
+    padding-bottom: 50px;
+}
+	.login-img img {
+    width: 100%;
+	max-width:550px;
+}
+.login-form-input label.active {
+    top: 8px;
+}
+.login-form-input input:focus + label {
+    top: 8px;
+}
+	.nav-list>li,
+	.nav-list>li>a {
+		font-size: 14px;
+	}
+	.sort-list li a {
+		padding: 10px 15px;
+		font-size: 14px;
+	}
+	.btn-all,
+	.btn-all-border {
+		width: auto;
+		font-size: 14px;
+		padding: 10px 15px!important;
+	}
+	.btn-all svg,
+	.print-btn svg,
+	.btn-all-border svg {
+		width: 20px;
+		margin-right: 7px;
+	}
+	.header-btn button {
+		margin-left: 10px;
+	}
+	.btn-all-border {
+		width: auto!important;
+	}
+	.nav-list>li>a svg {
+		width: 18px;
+		height: 18px;
+	}
+	#tile-1 .tab-slider {
+		width: 75px;
+	}
+	.user .user-name {
+		font-size: 16px;
+	}
+	.nav-list {
+		margin-bottom: 20px;
+	}
+	.table-container .table td {
+		font-size: 12px!important;
+	}
+	.table-container table thead th {
+		font-size: 12px!important;
+	}
+	.bill-btn,
+	.emr-btn {
+		width: auto;
+		height: 20px;
+		font-size: 12px;
+		padding: 2px 10px;
+		margin-right: 5px;
+	}
+	.sidenav-logo svg {
+		width: 40px;
+		height: 40px;
+	}
+	.has-search .form-control {
+		font-size: 16px;
+		width: 400px;
+	}
+	.action-btn svg {
+		width: 20px;
+	}
+	.action-btn-main:before {
+		height: 30px;
+	}
+	.pagination-main .page-link {
+		font-size: 13px;
+	}
+	.page-num {
+		font-size: 13px;
+	}
+	.sec-heading h2 {
+		font-size: 20px;
+	}
+	.login-box {
+		width: 460px;
+	}
+	
+	.login-container {
+    padding: 30px 150px 0;
+}
+.btn-login {
+    height: 45px;
+    margin-bottom: 20px;
+	    
+}
+.table-container .table td {
+    font-size: 12px;
+}
+.form-scroll {
+    height: calc(100vh - 30vh);
+    max-height: calc(100vh - 30vh);
+    min-height: calc(100vh - 30vh);
+    padding-bottom: 50px;
+}
+.appoint-cal-main {
+    width: auto;
+}
+.date-pick .datepicker td, .date-pick .datepicker th {
+    height: 30px!important;
+    padding: 0;
+}
+.date-pick .day {
+	font-size: 13px;
+}
+.head-info {
+    padding: 15px 10px;
+	    font-size: 13px;
+}
+.header-link {
+    font-size: 12px;
+    padding: 10px 10px;
+}
+.header-link svg {
+    margin-right: 8px!important;
+    width: 13px;
+}
+.f-box .row{
+	justify-content:space-between;
+}
+.w-150 ,.w-150 .select{
+    width: 105px;
+}
+.w-90 {
+    width: 90%;
+}
+
+.form-select .select-styled:after {
+    
+}
+.avatar-upload .avatar-preview {
+    width: 100px;
+	height: 100px;
+}
+.avatar-preview img{
+	    width: 100px;
+}
+.search-baby{
+	width: 100%;
+}
+
+.form-input .date span {
+    right: 10px;
+}
+	.login-form-input .input-addon {
+    top: 10px;
+}
+.header-btn button, .header-btn a {
+    margin-left: 10px;
+}
+.f-box .col-md-11 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 86%;
+    flex: 0 0 87%;
+	max-width: 87%;
+}
+.px-4.w-90 {
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+}
+.header-link{
+	justify-content:center;
+}
+.form-input {
+    margin-bottom: 8px;
+}
+.payment-left{
+	overflow-x:hidden;
+	padding-bottom:50px;
+}
+.payment-bottom label {
+	font-size: 13px;
+}
+.serv-head {
+    font-size: 13px;
+}
+.payment-form-list {
+    max-height: 280px;
+}
+.dr-des p {
+    font-size: 12px;
+    line-height: 18px;
+}
+.dr-des h4 {
+    font-size: 14px;
+}
+.payment-option-list li {
+    padding: 10px 12px;
+}
+.payment-option-list li h4 {
+    font-size: 12px;
+}
+.invoice-form-input input, .invoice-form-input input:focus {
+	height: 55px;
+}
+.input-add {
+    right: 15px;
+	top: 15px;
+}
+.btn-all, .btn-all-border, .print-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+    min-width: fit-content;
+}
+.print-content{
+	    height: 450px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+.modal.show{
+	display:inherit!important;
+}
+#cancel-appoint .modal-dialog, #reschedule-appoint .modal-dialog, #patient-reg .modal-dialog, #reschedule-appoint2 .modal-dialog, #reschedule-appoint3 .modal-dialog, #new-appoint .modal-dialog {
+    height: auto;
+}
+.table-container .table td, .table-container .table th {
+    padding: 10px 15px;
+}
+}
+
+@media(max-width:1280px) {
+	.selected-data input {
+    padding: 35px 20px!important;
+}
+	.print-content{
+	    height: 500px;
+    overflow-y: auto;
+    padding-bottom: 40px;
+}
+	.serv-content .select-styled {
+    padding: 10px;
+}
+.w-200 {
+    width: 165px;
+}
+	.btn-pink{
+		padding-right:15px!important;
+	}
+	.btn-login {
+    height: 60px;
+    margin-bottom: 20px;
+	    
+}
+.login-box {
+    width: 400px;
+}
+.login-form-input {
+    height: 70px;
+	    margin-bottom: 15px;
+}
+	.header-text h1 {
+		font-size: 22px;
+		line-height:35px;
+	}
+	.user .user-name {
+		font-size: 16px;
+	}
+	.sort-list li a {
+		padding: 10px 15px;
+		font-size: 12px;
+	}
+	#tile-1 .tab-slider {
+		width: 75px;
+	}
+	.login-inner{
+		align-items:center!important;
+		
+	}
+	.login-logo img {
+    max-width: 140px;
+}
+.login-logo {
+    margin-bottom: 20px;
+	    position: absolute;
+    top: 60px;
+}
+.login-head {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.main-page-container {
+    width: calc(100% - 220px);
+}
+.nav .header-nav-list a {
+	padding: 0px 20px!important;
+}
+span.badge-pulse{
+	top:0;
+}
+.nav-header .dropdown-toggle::after {
+	top: 7px;
+}
+
+.form-heading {
+	font-size: 17px;
+    margin: 15px 0;
+}
+.table-container .table td, .table-container .table th {
+    padding: 10px 12px;
+    font-size: 12px;
+}
+.head-info {
+    font-size: 11px;
+    padding: 20px 15px;
+}
+
+.nav-header .dropdown-menu {
+    top: 50px!important;
+	left: -35px!important;
+}
+.dr-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px!important;
+}
+.dr-des {
+    width: calc(100% - 40px);
+}
+.dr-des p {
+    font-size: 11px;
+    line-height: 15px;
+}
+.h-52 {
+    margin-right: 10px;
+}
+.dr-des h4 {
+    font-size: 13px;
+    line-height: 18px;
+}
+.view {
+    font-size: 12px;
+    line-height: 15px;
+}
+.d-b-inner {
+    width: 190px;
+    height: 190px;
+    padding: 25px;
+}
+.d-head {
+	font-size: 20px;
+}
+.pay-box {
+    height: 70px;
+    padding: 10px 18px;
+}
+.invoice-person-list  li {
+    padding: 15px 15px!important;
+}
+.payment-bottom label {
+    font-size: 12px;
+}
+.invoice-form-input input, .invoice-form-input input:focus {
+    height: 50px;
+    width: 170px;
+}
+
+.pay-icon svg {
+    width: 18px;
+    height: 18px;
+}
+.invoice-table-input .invoice-form-input input, .invoice-table-input .invoice-form-input input:focus{
+	width:-webkit-fill-available;	
+}
+.w-68 input{
+	width:100%;
+}
+.amt-list li h4 {
+    font-size: 16px;
+}
+.amt-list li span {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.input-add {
+    right: 15px;
+    top: 13px;
+}
+.amt-list li {
+    margin-right: 10px;
+}
+.w-260 {
+    width: 180px;
+}
+.invoice-bottom-row .select-styled {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 12px;
+}
+.invoice-bottom-row .select-styled:after {
+    top: 15px;
+}
+.invoice-table{
+	overflow-x:auto;
+}
+.table-container .table thead th{
+	white-space:nowrap;
+}
+.form-input-main,.form-select-main,.form-select{
+    padding-right: 8px!important;
+	padding-left: 8px!important;
+}
+.btn-all, .btn-all-border, .print-btn {
+    font-size: 12px;
+    padding: 10px 15px!important;
+    min-width: fit-content;
+}
+.invoice-table .form-input input {
+    padding: 20px 15px;
+	height:50px;
+	font-size:12px;
+}
+.invoice-table .form-input,.invoice-table .select-styled, .invoice-table .select{
+	height:50px;
+	font-size:12px;
+}
+.invoice-table .select-styled, .invoice-table .select{
+	height:50px;
+}
+.text-dark .bg-gray-select .select-styled{
+	padding:20px 15px;
+}
+.invoice-table .select-styled:after {
+    top: 16px;
+}
+.slot-box {
+    width: 70px;
+    height: 35px;
+	font-size: 12px;
+}
+.baby-top-row {
+    padding-left: 25px;
+}
+.select-styled:after {
+    right: 30px;
+}
+.payment-option-list li h4 {
+    font-size: 11px;
+	line-height:initial;
+}
+.payment-option-list li .pay-icon {
+    margin-right: 6px;
+}
+
+}
